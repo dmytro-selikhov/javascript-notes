@@ -19,12 +19,16 @@ const today = new Date();
 const currentDay = today.getDay();
 
 if (currentDay === 6 || currentDay === 0) {
-  res.write("<h1>Yay it's the weekend! YUIIIIII!!!</h1>");
+  res.write("<h1>Yay it's the weekend! YUIIIIII!!!</h1>");// it should write line by line
   res.write("<p>I haven't to work!</p>");
 } else {
-  res.write("<p>It is not the weekend!</p>");
-  res.write("<h1>Boo! I have to work!</h1>");
-  res.send();
+			res.sendFile(__dirname + "/index.html"); // this line sends back file 
+
+
+
+  // res.write("<p>It is not the weekend!</p>");
+  // res.write("<h1>Boo! I have to work!</h1>");
+  // res.send(); // it will send all lines in the end
 }
 
 
