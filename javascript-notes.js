@@ -16,12 +16,14 @@ app.listen(3000, function(){ // isten on port 3000
 
 //Case when you will get answer depending of the week day
 const today = new Date();
+const currentDay = today.getDay();
 
-if (today.getDay() === 6 || today.getDay() === 0) {
-  res.send("Yay it's the weekend!");
+if (currentDay === 6 || currentDay === 0) {
+  res.send("Yay it's the weekend! YUIIIIII!!!");
 } else {
   res.send("Boo! I have to work!");
 }
+
 
 //to start - write in console nodemon app.js(all code should be in app.js file) in directory with app.js file
 // After that open browser in address http://localhost:3000/
