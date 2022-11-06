@@ -19,9 +19,9 @@ const today = new Date();
 const currentDay = today.getDay();
 
 if (currentDay === 6 || currentDay === 0) {
-  res.send("Yay it's the weekend! YUIIIIII!!!");
+  res.send("<h1>Yay it's the weekend! YUIIIIII!!!</h1>");
 } else {
-  res.send("Boo! I have to work!");
+  res.send("<h1>Boo! I have to work!</h1>");
 }
 
 
