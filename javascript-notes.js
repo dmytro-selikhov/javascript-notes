@@ -22,7 +22,7 @@ if (currentDay === 6 || currentDay === 0) {
   res.write("<h1>Yay it's the weekend! YUIIIIII!!!</h1>");// it should write line by line
   res.write("<p>I haven't to work!</p>");
 } else {
-			res.sendFile(__dirname + "/index.html"); // this line sends back file 
+			res.sendFile(__dirname + "/index.html"); // this line sends back file
 
 
 
@@ -34,3 +34,8 @@ if (currentDay === 6 || currentDay === 0) {
 
 //to start - write in console nodemon app.js(all code should be in app.js file) in directory with app.js file
 // After that open browser in address http://localhost:3000/
+
+
+
+
+//embedded javascript templating
