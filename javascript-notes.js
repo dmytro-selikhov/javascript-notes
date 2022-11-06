@@ -12,3 +12,16 @@ app.get("/", function(req, res){ // Creatin GET route
 app.listen(3000, function(){ // isten on port 3000
 	console.log("Server started on port 3000"); // console.log that our server has been started
 });
+
+
+//Case when you will get answer depending of the week day
+const today = new Date();
+
+if (today.getDay() === 6 || today.getDay() === 0) {
+  res.send("Yay it's the weekend!");
+} else {
+  res.send("Boo! I have to work!");
+}
+
+//to start - write in console nodemon app.js(all code should be in app.js file) in directory with app.js file
+// After that open browser in address http://localhost:3000/
