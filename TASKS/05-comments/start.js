@@ -7,3 +7,13 @@
  *
  * 3. Создайте многострочный комментарий
  */
+
+
+// One line comment
+
+const newVar = ""; //This is new constatnta
+
+/*This
+is
+long
+comment */
