@@ -10,3 +10,23 @@
  *
  * 5. Результат вызовов функции выведите в консоль
  */
+
+const myFunction = function(name){
+
+	let myText = `Hello, ${name}`;
+
+	return myText;
+
+	console.log(myText);
+}
+
+myFunction("Max");
+
+
+const hello = function (name) {
+  return 'Привет, ' + name
+}
+
+console.log(hello('Богдан'))
+
+console.log(hello('Ольга'))

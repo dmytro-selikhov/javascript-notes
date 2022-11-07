@@ -39,3 +39,9 @@ if (currentDay === 6 || currentDay === 0) {
 
 
 //embedded javascript templating - ejt
+
+****************************************
+Устанавливаем NodeJS и запускаем интерпритатор в командной строке:
+>node
+Теперь мы можем писать код на javascript в терминале
+
