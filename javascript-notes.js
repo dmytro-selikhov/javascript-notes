@@ -38,4 +38,4 @@ if (currentDay === 6 || currentDay === 0) {
 
 
 
-//embedded javascript templating
+//embedded javascript templating - ejt

@@ -8,3 +8,10 @@
  *
  * 4. Вызовите функцию
  */
+
+function namePrint(){
+	const myName = "Dima";
+	console.log(myName);
+}
+
+namePrint();
