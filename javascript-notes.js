@@ -301,13 +301,16 @@ myCity['street'] = 'Central Street';
 
 const cityJoke = 'Ho-ho-ho';
 
+const countryPropertyName = 'country';
+
+myCity[countryPropertyName] = 'Ukraine' // При создании свойства, js посмотрит значение переменной countryPropertyName, которое равно  'country' и создаст свойство в объекте с именем 'country'
 myCity['cityJoke'] = 'Ha-ha-ha';
 
 Теперь объект выглядит так:
 const myCity = {
 	city: 'New York',
 	popular: true,
-	country: 'USA',
+	country: 'Ukraine',
 	cityJoke: 'Ha-ha-ha'
 }
 
@@ -318,6 +321,130 @@ delete myCity['cityJoke'];
 const myCity = {
 	city: 'New York',
 	popular: true,
-	country: 'USA'
+	country: 'Ukraine'
 }
 
+ВАЖНО
+Точечная запись (myCity.street) отличается от скобочной записи (myCity['street']) тем, что в скобочной записи можно использовать любое выражение javascript(переменные и т.д.)
+
+
+ВЛОЖЕННЫЕ СВОЙСТВА ОБЪЕКТОВ
+
+const myCity = {
+	city: 'New York',
+	info: {
+		isPopular: true,
+		country: 'USA'
+	}
+}
+
+Добраться к свойству вложенного объекта можно через точечную или скобочную записи:
+
+console.log(myCity.info.country); // 'USA'
+console.log(myCity['info']['country']); // 'USA'
+
+Удалить свойства вложенного объекта также можно через точечную или скобочную записи:
+delete myCity.info.country
+delete myCity['info']['country']
+
+Можно использовать комбинацию точечной и скобочной записей
+delete myCity.info['country']
+
+Использование переменных в объектах
+
+const name = 'Dima';
+const postsQty = 23;
+
+const userProfile = {
+	name: name,
+	postsQty: postsQty,
+	hasSignedAgreement: false
+}
+
+Сокращенный формат записи свойств
+
+const userProfile = { // При условии формирования свойств из переменных, в этом случае переменные - name, postsQty.
+	name,
+	postsQty,
+	hasSignedAgreement: false
+}
+
+Сокращенные свойства рекомендуется размещать в начале объекта.
+
+**ГЛОБАЛЬНЫЕ ОБЪЕКТЫ**
+
+window -  присутствует в веб браузерах
+global - присутствует в Node.js
+
+
+Унифицированный глобальный объект:
+globalThis
+
+
+Свойства глобальных объектов
+console
+window.console
+global.console
+
+
+**МЕТОДЫ ОБЪЕКТА**
+Метод - свойство объекта, значение которого - функция.
+
+
+
+const myCity = {
+	city: 'New York',
+	cityGreeting: function() {
+		console.log('Greetings!!')
+	}
+}
+
+myCity.cityGreeting(); // 'Greetings!!'
+
+Убрали слово function
+const myCity = {
+	city: 'New York',
+	cityGreeting() {
+		console.log('Greetings!!')
+	}
+}
+
+myCity.cityGreeting(); // 'Greetings!!'
+
+**МЕТОДЫ VS СВОЙСТВА ОБЪЕКТОВ**
+
+Для доступа к значниям свойств используется точечная запись
+myCity.city
+
+Для вызова метода нужно добавить в конец скобки
+myCity.cityGreeting()
+
+
+**JSON**
+**JAVASCRIPT OBJECT NOTATION** // Формат обмена данными
+
+**КОНВЕРТАЦИЯ JAVASCRIPT ОБЪЕКТА В JSON**
+JSON.stringify(аргумент);
+
+const post = {
+	title: 'My post',
+	likesQty: 5
+}
+
+JSON.stringify(post);//'{"title":"My post","likesQty":5}'
+
+**КОНВЕРТАЦИЯ JSON В JAVASCRIPT ОБЪЕКТ**
+JSON.parse(аргумент);
+
+JSON передается в виде строки //'{"title":"My post","likesQty":5}'
+const postStringified = JSON.stringify(post);
+JSON.parse(postStringified);
+
+Получаем javascript объект
+{
+	title: 'My post',
+	likesQty: 5
+}
+
+
+**МУТАЦИЯ В JAVASCRIPT**
