@@ -265,4 +265,59 @@ const myCity = {
 	country: 'USA'
 }
 
+ПОЛУЧЕНИЕ ДОСТУПА К ЗНАЧЕНИЯМ СВОЙСТВ ОБЪЕКТА
+
+console.log(myCity.city);
+// 'New York'
+
+
+
+СОЗДАНИЕ И УДАЛЕНИЕ СВОЙСТВ ОБЪЕКТА
+
+Добавить можно несуществующее свойсто через точечную запись:
+myCity.street = 'Central Street';
+
+Теперь объект выглядит так:
+const myCity = {
+	city: 'New York',
+	popular: true,
+	country: 'USA',
+	street: 'Central Street'
+}
+
+Удалить свойство можно через оператор удаления delete:
+delete myCity.street;
+
+Теперь объект выглядит так:
+const myCity = {
+	city: 'New York',
+	popular: true,
+	country: 'USA',
+}
+
+
+Доступ к значению свойства с использованием скобок []:
+myCity['street'] = 'Central Street';
+
+const cityJoke = 'Ho-ho-ho';
+
+myCity['cityJoke'] = 'Ha-ha-ha';
+
+Теперь объект выглядит так:
+const myCity = {
+	city: 'New York',
+	popular: true,
+	country: 'USA',
+	cityJoke: 'Ha-ha-ha'
+}
+
+Удалить свойство можно через оператор удаления delete:
+delete myCity['cityJoke'];
+
+Теперь объект выглядит так:
+const myCity = {
+	city: 'New York',
+	popular: true,
+	country: 'USA'
+}
 
