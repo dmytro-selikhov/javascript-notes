@@ -448,3 +448,80 @@ JSON.parse(postStringified);
 
 
 **МУТАЦИЯ В JAVASCRIPT**
+
+Можно скопировать ссылку на объект, в таком случае при изменении свойств копии изменится оригинальный объект.
+
+const person = {
+	name: 'Bob',
+	age: 25
+}
+
+const person2 = person // Копирование ссылки (copy by reference)
+person2.age = 26; // Мутация объекта на который ссылается person2
+person2.isAdult = true; // Мутация объекта на который ссылается person2
+
+console.log(person.age) // 26 - Мутация отразилась на переменной person
+console.log(person.isAdult) // true - Мутация отразилась на переменной person
+
+
+
+**КАК ИЗБЕЖАТЬ МУТАЦИЙ**
+Вариант 1
+!!!Если у объекта есть вложенные объекты, то ссылки на них СОХРАНЯЮТСЯ
+
+const person = {
+	name: 'Bob',
+	age: 25
+}
+
+const person2 = Object.assign({}, person);
+person2.age = 26;
+
+console.log(person2.age); //26
+console.log(person.age); //25
+
+
+Вариант 2
+Используем оператор разделения объекта на свойства - ...(спрэд оператор - spread operator)
+!!!Если у объекта есть вложенные объекты, то ссылки на них СОХРАНЯЮТСЯ
+
+const person = {
+	name: 'Bob',
+	age: 25
+}
+
+const person2 = { ...person };
+person2.name = 'Alice';
+
+console.log(person2.name); // Alice
+console.log(person.name); // Bob
+
+
+Вариант 3
+Полная копия объекта без мутаций
+!!!Ссылки на вложенные объекты не сохраняются
+
+const person = {
+	name: 'Bob',
+	age: 25
+}
+
+const person2 = JSON.parse(JSON.stringify(person));
+
+person2.name = 'Mike';
+
+console.log(person2.name); // Mike
+console.log(person.name); // Bob
+
+
+
+
+
+
+
+
+
+
+
+
+
