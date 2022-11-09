@@ -560,6 +560,117 @@ function myFn(a,b) {
 **ПЕРЕДАЧА ЗНАЧЕНИЯ ПО ССЫЛКЕ**
 
 
+const personOne = {
+	name: 'Bob',
+	age: 21
+}
+
+function increasePersonAge(person) {
+	person.age += 1;
+
+	return person;
+}
+
+increasePersonAge(personOne);
+console.log(personOne.age);
+
+
+Внутри функции НЕ РЕКОМЕНДУЕТСЯ мутировать ВНЕШНИЕ объекты
+
+Внутри функции можно делать копии объектов, для того чтобы предотвратить мутацию объектов.
+
+const personOne = {
+	name: 'Bob',
+	age: 21
+}
+
+function increasePersonAge(person) {
+	const updatedPerson = JSON.parse(JSON.stringify(person));
+
+	updatedPerson.age += 1;
+
+	return updatedPerson;
+}
+
+const updatedPersonOne = increasePersonAge(personOne);
+console.log(personOne.age)// 21
+console.log(updatedPersonOne.age)// 22
+
+**КОЛБЭК ФУНКЦИИ**
+
+function anotherFunction() {
+	// body...
+	console.log("Yesss, man, I'm callback function)))")
+}
+
+
+function fnWithCallback(callbackFunction) {
+	callbackFunction();
+}
+
+
+fnWithCallback(anotherFunction)
+
+
+Пример
+
+function printMyName() {
+	// body...
+	console.log('Dimon');
+}
+
+
+setTimeout(printMyName, 1000);
+
+
+**ПРАВИЛА РАБОТЫ С ФУНКЦИЯМИ**
+
+1. Называйте функции исходя из выполняемых задач
+
+2. ОДНА функция должна выполнять ОДНУ задачу
+
+3. Не рекомендуется изменять ВНЕШНИЕ относительно функции ПЕРЕМЕННЫЕ
+
+
+
+
+
+**ОБЛАСТИ ВИДИМОСТИ**
+
+Область видимости определяет границы действия переменной.
+
+Глобальная область видимости - windiw, global
+
+
+Локальные области видимости - функции
+
+let a;
+let b;
+
+function myFn() {
+	let b;
+	a = true;
+	b = 10;
+
+	console.log(b);
+}
+
+myFn();
+
+console.log(a);
+console.log(b);
+
+
+**ЦЕПОЧКА ОБЛАСТЕЙ ВИДИМОСТИ**
+
+
+
+
+
+
+
+
+
 
 
 
