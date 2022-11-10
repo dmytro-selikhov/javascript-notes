@@ -1277,13 +1277,100 @@ myArray.length; // 3
 
 
 
+**КАК РАБОТАТЬ С ЭЛЕМЕНТАМИ МАССИВА**
+Чтение значений массива
+
+const myArray = [1, true, 'a']
+console.log(myArray) // [1, true, 'a']
+
+console.log(myArray[0]) // 1
+console.log(myArray[1]) // true
+
+console.log(myArray.length) // 3
+
+Как добавлять новые элементы в массив
+const myArray = [1, 2, 3, 4];
+console.log(myArray); // [1, 2, 3, 4]
+console.log(myArray.length); // 4
+
+myArray[2] = 'abc';
+
+console.log(myArray); // [1, 2, 'abc', 4]
+console.log(myArray[2]); // 'abc'
+
+myArray[4] = true;
+
+console.log(myArray); // [1, 2, 'abc', 4, true]
+console.log(myArray.length); // 5
+
+
+**МЕТОДЫ МАССИВОВ**
+
+Почитать за методы можно здесь:
+https://learn.javascript.ru/array-methods
+https://habr.com/ru/company/plarium/blog/483958/
 
 
 
+Методы массивов - функции высшего порядка в массивах
+ Методы массивов:
+  - push // Мутирует оригинальный массив
+  - pop // Мутирует оригинальный массив
+  - shift // Мутирует оригинальный массив
+  - unshift // Мутирует оригинальный массив
+  - forEach
+  - map
 
 
+**PUSH - добавление элемента в конец массива
+const myArray = [1, 2, 3]
+console.log(myArray) // [1, 2, 3]
+
+myArray.push(4);
+console.log(myArray) // [1, 2, 3, 4]
+
+myArray.push(true);
+console.log(myArray) // [1, 2, 3, 4, true]
 
 
+**POP - удаление элемента с конца массива, возвращает удаленный элемент
+const myArray = [1, 2, 3];
+console.log(myArray); // [1, 2, 3]
+
+myArray.pop();
+
+console.log(myArray); // [1, 2]
+const removedElement = myArray.pop();
+
+console.log(myArray); // [1]
+console.log(removedElement); // 2
+
+
+**UNSHIFT - добавление элемента в начало массива
+const myArray = [1, 2, 3];
+console.log(myArray); // [1, 2, 3]
+
+myArray.unshift(true);
+
+console.log(myArray); // [true, 1, 2, 3]
+
+myArray.unshift('abc');
+
+console.log(myArray); // ['abc', 1, 2, 3]
+
+
+**SHIFT - удаление элемента в начале массива, возвращает удаленный элемент
+const myArray = [1, 2, 3];
+console.log(myArray); // [1, 2, 3]
+
+myArray.shift();
+
+console.log(myArray); // [2, 3]
+
+const removedElement = myArray.shift();
+
+console.log(myArray); // [3]
+console.log(removedElement); // 2
 
 
 
