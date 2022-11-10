@@ -1087,14 +1087,61 @@ a => {
 (a, b) => a + b;
 
 
+Значение параметров функции по умолчанию
+1. Пример
+function multByFactor(value, multiplier = 1) {
+	return value * multiplier
+}
+
+multByFactor(10, 2); // 20
+multByFactor(5); // 5
 
 
+Анонимное функциональное выражение
+const multByFactor = function(value, multiplier = 1){
+	return value * multiplier;
+}
+
+Стрелочная функция
+const multByFactor = (value, multiplier = 1) =>{
+	return value * multiplier;
+}
 
 
+2. Пример с неявным возвратом значения функции
+const newPost =(post, addedAt = Date()) => ({ // Круглые скобки здесь нужны для нечвного возвращения объекта.
+	...post,
+	addedAt
+})
+
+const firstPost = {
+	id: 1,
+	author: 'Dima'
+}
+
+const resFun = newPost(firstPost);
+
+console.log(resFun);
 
 
+3. Пример с явным возвратом значения функции
 
+const newPost = (post, addedAt = Date()) => { // Круглые скобки здесь нужны для нечвного возвращения объекта
+	const insPost = {
+	...post,
+	addedAt		
+	}
+	return insPost;
+}
 
+const firstPost = {
+	id: 1,
+	author: 'Dima'
+}
+
+const resFun = newPost(firstPost);
+
+console.log(resFun);
 
 
 
