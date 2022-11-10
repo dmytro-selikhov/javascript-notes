@@ -1144,6 +1144,43 @@ const resFun = newPost(firstPost);
 console.log(resFun);
 
 
+**ОБРАБОТКА ОШИБОК** // debugging
+
+const fnWithError = () => {
+	throw new Error('Some error'); // Можем сгенерировать инструкцию javascript  - Появится ошибка и выполнение кода остановится
+}
+ 
+fnWithError();
+
+console.log('Continue...');
+
+
+РЕШЕНИЕ 
+ОЧЕНЬ РЕКОМЕНДУЕТСЯ ПОМЕЩАТЬ КОД В TRY - CATCH БЛОК, ЧТО БЫ ПРИЛОЖЕНИЕ НЕ КРАШИЛОСЬ
+
+
+try {
+	// Выполение блока кода
+} catch (error) {
+	// Этот блок выполняется в случае возникновения ошибок в блоке try
+}
+
+
+const fnWithError = () => {
+	throw new Error('Some error'); // Можем сгенерировать инструкцию javascript
+}
+
+try {
+	fnWithError()	// Выполение блока кода
+} catch (error) {
+	// Этот блок выполняется в случае возникновения ошибок в блоке try
+	console.error(error);
+	console.log(error.message);
+} // Выполнение кода продолжитсяы
+
+console.log('Continue...'); 
+
+
 
 
 
