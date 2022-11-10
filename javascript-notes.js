@@ -910,6 +910,71 @@ true
 
 
 
+**ОПЕРАТОР РАЗДЕЛЕНИЯ НА СВОЙСТВА**
+
+Оператор ... - spread operator
+
+const button = {
+	width: 200,
+	text: 'Buy'
+} 
+
+
+const redButton = {
+	...button,
+	color: 'red' // если у объекта 'button' есть свойство 'color' то оно будет перезаписано, т.к. стоит после разделения объекта на свойства.
+}
+
+console.table(redButton);
+
+
+
+ 
+const buttonInfo = {
+	text: 'Buy'
+}
+
+const buttonStyle = {
+	color: 'yellow',
+	width: 200,
+	height: 300
+}
+
+const button = {
+	...buttonInfo,
+	...buttonStyle
+}
+
+console.table(button);
+
+
+**КОНКАТЕНАЦИЯ СТРОК**
+
+Оператор + для конкатенации строк
+'Hello ' + 'World' // 'Hello World'
+
+Переменные в конкатенации строк
+const hello = 'Hello';
+const world = 'World';
+
+const greeting = hello + ' ' + world;
+
+
+Шаблонные строки
+const hello = 'Hello';
+const world = 'World';
+
+const greeting = `${hello} ${world}`;
+
+const name = 'Dima';
+const city = 'Kyiv';
+
+console.log(`My name is ${name} and I live in ${city}.`);
+
+При соединении числа и строки, число конвертируется в строку
+10 + 'Dima' // '10Dima'
+Также любой другой тип при соединении со строкой конвертируется в строку 
+undefined + 'abc' // 'undefinedabc'
 
 
 
