@@ -1410,39 +1410,110 @@ console.log(newArray2); // [4, 8, 12] Новый массив
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 **ДЕСТРУКТУРИЗАЦИЯ**
+
+**Деструктуризация объектов
+
+const userProfile = {
+	name: 'Dima',
+	commentsQty: 23,
+	hasSignedAgreement: false,
+}
+
+
+Объявление новых переменных и присваивание значений на основе значений свойств объекта
+const {name, commentsQty} = userProfile;
+const { hasSignedAgreement} = userProfile;
+
+console.log(name); // Dima
+console.log(commentsQty);// 23
+
+
+**Деструктуризация массивов, используем []
+Объявление новых переменных и присваивание значений на основе элементов массива
+При деструктуризации массивов важно учитывать порядок следования элементов в массиве
+const fruits = ['Apple', 'Banana'];
+const [fruitOne, fruitTwo] = fruits;
+
+console.log(fruitOne); // Apple
+console.log(fruitTwo); // Banana
+
+
+
+**Деструктуризация параметров функции 
+const userProfile = {
+	name: 'Dima',
+	commentsQty: 23,
+	hasSignedAgreement: false
+}
+
+const userInfo = ({name, commentsQty }) => { // {name, commentsQty } - это деструктуризация параметров функции
+	if (!commentsQty) {
+		return `User ${name} has no comments`
+	}
+	return `User ${name} has ${commentsQty} comments`
+}
+
+userInfo(userProfile); // User Dima has 23 comments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
