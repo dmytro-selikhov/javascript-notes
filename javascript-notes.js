@@ -1447,7 +1447,7 @@ const userProfile = {
 	hasSignedAgreement: false
 }
 
-const userInfo = ({name, commentsQty }) => { // {name, commentsQty } - это деструктуризация параметров функции
+const userInfo = ({name, commentsQty }) => { // {name, commentsQty } - это деструктуризация параметров функции 
 	if (!commentsQty) {
 		return `User ${name} has no comments`
 	}
@@ -1459,9 +1459,111 @@ userInfo(userProfile); // User Dima has 23 comments
 
 
 
+**УСЛОВНЫЕ ИНСТРУКЦИИ**
+
+Инструкция выполняет определенные действия.
+Выражение возвращает результат
+
+- if (инструкция)
+- if ... else (инструкция)
+- switch (инструкция)
+- тернарный оператор (выражение)
+
+if(Условие){
+	// Блок кода, выполняемый однократно, если Условие правдиво
+}
+
+Пример IF 
+let val = 10;
+
+if (val > 5) {
+	val += 20
+}
+
+console.log(val); // 30
+
+Пример IF с оператором отрицания
+const person = {
+	age: 20
+}
+
+if (!person.name){ //!undefined === true
+	console.log("Unknown user's name!");
+	// Другие действия в случае, если свойства "name" у объекта "person" нету
+}
 
 
 
+Инструкция IF ELSE 
+
+if (Условие) {
+	// Блок кода, выполняемый однократно, если Условие правдиво
+} else {
+	// Блок кода, выполняемый однократно, если Условие ложно
+}
+
+Пример IF ELSE
+let val = 10;
+
+if (val < 5) {
+	val += 20;
+} else {
+	val -= 20;
+}
+
+console.log(val); // -10
+
+
+Инструкция IF ELSE IF
+
+if(Условие 1) {
+	// Блок кода, выполняемый однократно, если Условие 1 правдиво
+} else if (Условие 2) {
+	// Блок кода, выполняемый однократно, если Условие 2 правдиво
+} else {
+	// Блок кода, выполняемый однократно, если предыдущие условия ложны
+}
+
+
+Предпочтительный формат IF
+
+if(Условие 1) {
+	// Блок кода, выполняемый однократно, если Условие 1 правдиво
+} 
+
+if (Условие 2) {
+	// Блок кода, выполняемый однократно, если Условие 2 правдиво
+} 
+
+if (Условие 3) {
+	// Блок кода, выполняемый однократно, если Условие 3 правдиво
+}
+
+
+Пример
+
+const age = 8;
+
+if (age > 18) {
+	console.log('Is adult')
+} else if (age >= 12) {
+	console.log('Is teenager')
+} else {
+	console.log('Is child')
+}
+
+
+const age = 34;
+
+if (age > 18) {
+	console.log('Is adult')
+} 
+if (age >= 12 && age <= 18) {
+	console.log('Is teenager')
+} 
+if (age < 12){
+	console.log('Is child')
+}
 
 
 
