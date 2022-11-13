@@ -1669,6 +1669,182 @@ console.log(res); // 5
 
 
 
+**ЦИКЛЫ**
+Все циклы - это инструкции, не выражения
+Типы циклов:
+- for
+- for ... in ...
+- while 
+- do ... while
+- for ... of ...
+
+
+**ЦИКЛ FOR** 
+for (Начальная инструкция; Условие; Итерационное действие) {
+	//Блок кода, выполняемый на каждой итерации
+}
+
+const arr = [1, true, 'me', null, 456, 'string'];
+
+for (let i = 0; i < arr.length; i++){
+	console.log(arr[i]);
+}
+
+
+
+Циклы можно использовать, но не рекомендуется для массивов
+Лучше использовать функции высшего порядка массивов
+- forEach
+- map
+- reduce
+
+
+
+const myArray = ['first', 'second', 'third'];
+
+for (let i = 0; i < myArray.length; i++) {
+	console.log(myArray[i]);
+}
+
+
+const myArray = ['first', 'second', 'third'];
+
+myArray.forEach((element, index) =>{
+	console.log(element, index);
+});
+
+// 'first' 0
+// 'second' 1
+// 'third' 2
+
+
+
+**ЦИКЛ WHILE**
+
+while (Условие) { // Цикл выполняется пока условие правдиво
+	// Блок кода, выполняемый на каждой итерации. Может быть ни разу не выполнен, если условие ложно
+}
+
+let i = 0;
+
+while (i < 5) {
+	console.log(i);
+	i++;
+}
+
+
+
+**ЦИКЛ DO WHILE**
+
+do { // Блок кода выполняется хотя бы один раз
+	// Блок кода, выполняемый на каждой итерации
+} while (Условие)
+
+
+let i = 6;
+
+do {
+	console.log(i);
+	i++;
+} while (i < 5);
+
+
+**ЦИКЛ FOR IN** РАБОТА С ОБЪЕКТАМИ
+
+for (key in Object) {
+	// Действие с каждыйм свойством объекта
+	// Значение свойства - Object[key]
+}
+
+
+
+const myObj ={
+	name: "Dima",
+	age: 34,
+	isMarried: true,
+	hasKids: false
+}
+
+for (key in myObj){
+	console.log(key + " : " + myObj[key]);
+}
+
+FOREACH ДЛЯ ОБЪЕКТОВ
+const myObject = {
+	x: 10,
+	y: true,
+	z: 'abc'
+}
+
+Object.keys // - Получение всех ключей объекта в виде массива
+const objArray = Object.keys(myObject);
+console.log(objArray);
+
+ Object.keys(myObject).forEach(key => {
+	console.log(key, myObject[key]);
+})
+
+// x 10
+// y true
+// z abc
+
+Object.values(myObject).forEach(value => {
+	console.log(value);
+})
+
+**FOR IN ДЛЯ МАССИВОВ**;
+
+const myArray = [true, 10, 'abc'];
+
+for (const key in myArray) {
+	console.log(myArray[key]);
+}
+
+// true
+// 10
+// abc
+
+**ЦИКЛ FOR OF** // Появился в ES6
+
+for (Element of Iterable) {
+	// Действия с определенным элементом
+}
+
+
+**FOR OF ДЛЯ СТРОК**
+
+const myString = 'Dimon'
+
+for ( const letter of myString){
+	console.log(letter);
+}
+
+
+**FOR OF ДЛЯ МАССИВОВ**
+
+const myArray = [true, 10, 'abc'];
+
+for (const element of myArray){
+	console.log(element);
+}
+
+
+
+
+**ДЛЯ МАССИВОВ ВСЕГДА ИСПОЛЬЗОВАТЬ FOREACH**
+
+const myArray = [true, 10, 'abc'];
+
+myArray.forEach(element => {
+	console.log(element);
+})
+
+
+**FOR OF НЕ ДЛЯ ОБЪЕКТОВ**
+
+
+
+
 
 
 
