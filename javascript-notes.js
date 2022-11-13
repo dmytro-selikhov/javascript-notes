@@ -1565,38 +1565,107 @@ if (age < 12){
 	console.log('Is child')
 }
 
+**Использование IF в функциях
+const sumPositiveNumbers = (a, b) =>{
+	if (typeof a !== 'number' || typeof b !== 'number') {
+		return 'One of the arguments is not a number'
+	}
+
+	if (a <= 0 || b <= 0) {
+		return 'Numbers are not positive'
+	}
+
+	return a + b;
+}
+
+sumPositiveNumbers(5, 8);
+
+
+Инструкция SWITCH 
+
+
+switch (Выражение) {
+	case A:
+	// Действие если Выражение === A
+		break
+	case B:
+	// Действие если Выражение === B
+		break
+	default:
+	// Действие по умолчанию
+}	
+
+Пример SWITCH
+const month = 2;
+
+switch(month) {
+	case 12:
+		console.log('December');
+		break
+	case 1:
+		console.log('January');
+		break
+	case 2:
+		console.log('February');
+		break
+	default:
+		console.log('This is not a winter month!')
+}
+
+
+**ТЕРНАРНЫЙ ОПЕРАТОР**
+- У тернаронго оператора три операнда
+- Оператор возвращает значение
+- Конструкция с тернарным оператором - выражение
+- Выражение возвращает значение
+
+Синтаксис тернарого оператора:
+Условие ? Выражение 1 : Выражение 2
+
+ ^  - любое выражение
+
+Если условие правдиво, тогда возвращается результат Выражения 1
+Если условие ложно, тогда возвращается результат Выражения 2
+
+Тернарный оператор
+
+Условие
+? Выражение 1
+: Выражение 2
+
+
+const value = 11;
+
+value
+	? console.log('True') // True
+	: console.log('False')
+
+
+const value2 = '';
+
+value2
+	? console.log('True')
+	: console.log('False') // False
 
 
 
+const value1 = 11;
+const value2 = 25;
+
+value1 && value2 
+	? myFunction1(value1, value2)
+	: myFunction2()
 
 
 
+let value = 11;
 
+console.log(value >= 0 ? value : -value); // 11
 
+value = -5;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const res = value >= 0 ? value : -value; // 5
+console.log(res); // 5
 
 
 
