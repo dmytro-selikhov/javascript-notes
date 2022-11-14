@@ -1844,9 +1844,27 @@ myArray.forEach(element => {
 
 
 
+**МОДУЛИ**
+ - Модули позволяют структурировать код
+ - Модули позволяют избегать дублирования блоков кода
 
 
+**EXPORT/IMPORT СИНТАКСИС, ПОЯВИЛСЯ В ES 6**
 
+moduleOne.js 			moduleTwo.js
+
+export ...				import ...
+
+
+Примеры 
+Экспорт по умолчанию
+
+moduleOne.js 						moduleTwo.js
+const myName = ()=>{ 				import printMyName from './moduleOne.js';
+	console.log('Dima');			printMyName(); // Dima
+}
+
+export default myName;
 
 
 
