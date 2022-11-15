@@ -3,11 +3,14 @@
 // printMyName(); // Dima
 
 
-import printSum from './moduleOne.mjs';
+import {
+sum,
+mult as multNumbers
+} from './moduleOne.mjs';
 
-const res1 = printSum(10, 2);
+const res1 = sum(10, 2);
 console.log(res1);
 
 
-const res2 = printSum(-2, 17);
+const res2 = multNumbers(-2, 17);
 console.log(res2);

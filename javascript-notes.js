@@ -1867,30 +1867,94 @@ const myName = ()=>{ 				import printMyName from './moduleOne.js';
 export default myName;
 
 
+ При работе с модулями - расширение файла .mjs
+// moduleOne.mjs
+// moduleTwo.mjs
+
+
+**НЕСКОЛЬКО ЭКСПОРТОВ**
+
+// moduleOne.js
+;
+const one = 1;
+const two = 'two';
+
+export {
+	one,
+	two
+}
 
 
 
+// moduleTwo.js 
+//!!!! Имена переменных должны совпадать!
+// При таком импорте можно переименовывать переменные
+
+import {
+	one as oneRenamed,
+	two
+} from './moduleOne.js'
+
+console.log(oneRenamed); // 1
+console.log(two); // two
 
 
+**ПРАВИЛА РАБОТЫ С МОДУЛЯМИ**
+1. Модули должны быть одноцелевыми
+2. Располагайте все export инструкции внизу файла
+3. Располагайте все import инструкции сверху файла
+4. По возможности использовать export default
 
 
+**ОЧЕНЬ ВАЖНАЯ ТЕМА В JAVASCRIPT**
+**КЛАССЫ И ПРОТОТИПЫ**
+
+**СИНТАКСИС КЛАССОВ ПОЯВИЛСЯ В ES6**
+javascript не является объектно ориентированным языком программирования
+
+КЛАССЫ позволяют создавать прототипы для объектов
+
+На основании прототипов создаются ЭКЗЕМПЛЯРЫ
+
+ЭКЗЕМПЛЯРЫ могут иметь свои собственные свойства и методы
+
+ЭКЗЕМПЛЯРЫ наследуют свойства и методы прототипов
+
+class ...
 
 
+**ПРИМЕР КЛАССА**
+
+class Commet { // ключевое слово class, название класса с большой буквы
+	constructor(text){  // метод constructor
+		this.text = text // переменная this указывает на экземпляр класса
+		this.votesQty = 0 // переменная this указывает на экземпляр класса
+	}
+
+	upvote() { // метод upvote 
+		this.votesQty += 1 // переменная this указывает на экземпляр класса
+	}
+}
 
 
+**СОЗДАНИЕ ЭКЗЕМПЛЯРОВ КЛАССА**
+
+class Commet {
+	constructor(text) {
+		this.text = text
+		this.votesQty = 0
+	}
+
+	upvote() {
+		this.votesQty += 1
+	}
+}
 
 
+					С помощью ключевого слова new вызывается функция constructor
+const firstComment = new Commet('First text');
 
-
-
-
-
-
-
-
-
-
-
+**СОБСТВЕННЫЕ СВОЙСТВА ЭКЗЕМПЛЯРА**
 
 
 
