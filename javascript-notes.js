@@ -1925,7 +1925,7 @@ class ...
 
 **ПРИМЕР КЛАССА**
 
-class Commet { // ключевое слово class, название класса с большой буквы
+class Comment { // ключевое слово class, название класса с большой буквы
 	constructor(text){  // метод constructor
 		this.text = text // переменная this указывает на экземпляр класса
 		this.votesQty = 0 // переменная this указывает на экземпляр класса
@@ -1939,7 +1939,7 @@ class Commet { // ключевое слово class, название класс
 
 **СОЗДАНИЕ ЭКЗЕМПЛЯРОВ КЛАССА**
 
-class Commet {
+class Comment {
 	constructor(text) {
 		this.text = text
 		this.votesQty = 0
@@ -1952,9 +1952,149 @@ class Commet {
 
 
 					С помощью ключевого слова new вызывается функция constructor
-const firstComment = new Commet('First text');
+const firstComment = new Comment('First text');
+
+console.log(firstComment);
 
 **СОБСТВЕННЫЕ СВОЙСТВА ЭКЗЕМПЛЯРА**
+
+НАСЛЕДОВАНИЕ ПО ЦЕПОЧКЕ
+
+firstComment.constructor()
+firstComment.upvote()
+
+
+firstComment  	>>		Comment  		>>	 	Object 
+Является 				"Comment" наследует 
+экземпляром 		 	все методы "Object"
+класса "Comment"		который является 
+						глобальным классом
+						javascript
+
+**ПРОВЕРКА ПРИНАДЛЕЖНОСТИ КЛАССУ**
+**ИСПОЛЬЗУЕМ ОПЕРАТОР INSTANCEOF**
+
+class Comment {
+	constructor(text) {
+		this.text = text
+		this.votesQty = 0
+	}
+
+	upvote() {
+		this.votesQty += 1
+	}
+}
+
+const firstComment = new Comment('First text');
+
+firstComment instanceof Commet // true
+firstComment instanceof Object // true
+
+
+**ВЫЗОВ МЕТОДОВ**
+
+
+class Comment {
+	constructor(text) {
+		this.text = text
+		this.votesQty = 0
+	}
+
+	upvote() {
+		this.votesQty += 1
+	}
+}
+
+const firstComment = new Comment('First text');
+
+firstComment.upvote()
+console.log(firstComment.votesQty) // 1
+firstComment.upvote()
+console.log(firstComment.votesQty) // 2
+
+
+**ПРАКТИКА СОЗДАНИЯ КЛАССОВ И ЭКЗЕМПЛЯРОВ**
+
+class Comment {
+	constructor(text) {
+		this.text = text
+		this.votesQty = 0
+	}
+
+	upvote() {
+		this.votesQty += 1
+	}
+}
+
+const firstComment = new Comment('First text');
+
+
+**ПРОВЕРКА ПРИНАДЛЕЖНОСТИ СВОЙСТВ ЭКЗЕМПЛЯРА**
+;
+const firstComment = new Comment('First text');
+firstComment.hasOwnProperty('text'); // true
+firstComment.hasOwnProperty('votesQty'); // true
+firstComment.hasOwnProperty('upvote'); // false
+firstComment.hasOwnProperty('hasOwnProperty'); // false
+
+
+
+**СОЗДАНИЕ НЕСКОЛЬКИХ ЭКЗЕМПЛЯРОВ**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
