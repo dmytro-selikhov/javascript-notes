@@ -2032,6 +2032,7 @@ const firstComment = new Comment('First text');
 **ПРОВЕРКА ПРИНАДЛЕЖНОСТИ СВОЙСТВ ЭКЗЕМПЛЯРА**
 ;
 const firstComment = new Comment('First text');
+
 firstComment.hasOwnProperty('text'); // true
 firstComment.hasOwnProperty('votesQty'); // true
 firstComment.hasOwnProperty('upvote'); // false
@@ -2040,9 +2041,43 @@ firstComment.hasOwnProperty('hasOwnProperty'); // false
 
 
 **СОЗДАНИЕ НЕСКОЛЬКИХ ЭКЗЕМПЛЯРОВ**
+class Comment {
+	constructor(text) {
+		this.text = text
+		this.votesQty = 0
+	}
+
+	upvote() {
+		this.votesQty += 1
+	}
+}
+
+const firstComment = new Comment('First comment');
+const secondComment = new Comment('Second comment');
+const thirdComment = new Comment('Third comment');
+
+**СТАТИЧЕСКИЕ МЕТОДЫ**
+
+!!Метод доступен как свойство класса и НЕ НАСЛЕДУЕТСЯ экземплярами класса
+Используется ключевое слово static
+
+class Comment {
+	constructor(text) {
+		this.text = text
+		this.votesQty = 0
+	}
+
+	upvote() {
+		this.votesQty += 1
+	}
+
+	static mergeComments(first, second) {
+		return `${first} ${second}`;
+	}
+}
 
 
-
+Comment.mergeComments('First comment.', 'Second Comment.');
 
 
 
