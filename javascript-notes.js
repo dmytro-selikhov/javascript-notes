@@ -2099,9 +2099,12 @@ myArray  >>  NumbersArray >> Array >> Object
  - NumbersArray - расширяет класс Array
  - Array - расширяет Object
 
- Любой экземпляр класса NumbersArray наследует все методы NumbersArray, Array, Object  
+ Любой экземпляр класса NumbersArray наследует все методы NumbersArray, Array, Object 
 
 
+ **ЧТО ТАКОЕ ПРОТОТИП** 
+
+**СТРОКИ И ЧИСЛА ВЕДУТ СЕБЯ КАК ОБЪЕКТЫ**
 
 
 
