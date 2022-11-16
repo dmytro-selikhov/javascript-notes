@@ -2080,13 +2080,26 @@ class Comment {
 Comment.mergeComments('First comment.', 'Second Comment.');
 
 
+**РАСШИРЕНИЕ ДРУГИХ КЛАССОВ**
+class NumbersArray extends Array { // Родительский конструктор вызовется автоматически
+	sum() {
+		return this.reduce((el, acc) => acc += el, 0)
+	}
+}
 
+const myArray = new NumbersArray(2, 5, 7);
+console.log(myArray);
+myArray.sum();
 
+В данном примере создана такая цепочка прототипов:
 
+myArray  >>  NumbersArray >> Array >> Object
 
+ - myArray - это экземпляр класса NumbersArray
+ - NumbersArray - расширяет класс Array
+ - Array - расширяет Object
 
-
-
+ Любой экземпляр класса NumbersArray наследует все методы NumbersArray, Array, Object  
 
 
 
