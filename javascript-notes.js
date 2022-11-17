@@ -2217,19 +2217,48 @@ getData('https://jsonplaceholder.typicode.com/todos/53')
 
 
 **ASYNC/AWAIT**
+ASYNC/AWAIT специальный синтаксис для упрощения работы с Промисами - появился в ES6
+
+**АСИНХРОННАЯ ФУНКЦИЯ**
+
+async function asyncFn() {
+	// Всегда возвращает Промис
+}
+
+const asyncFn = async () => {
+	// Всегда возвращает Промис
+	return 'Success!'
+}
+
+asyncFn()
+
+****
+const asyncFn = async () => {
+	// Всегда возвращает Промис
+	return 'Success!'
+}
+
+asyncFn()
+	.then(value => console.log(value));
 
 
+****
+const asyncFn = async () => {
+	// Всегда возвращает Промис
+	throw new Error('There was an error!');
+}
+
+asyncFn()
+.then(value => console.log(value))
+.catch(error => console.log(error.message))
 
 
+**AWAIT**
+const asyncFn = async () => {
+	await <Promise>
+}
 
-
-
-
-
-
-
-
-
+asyncFn()
 
 
 
