@@ -2254,23 +2254,74 @@ asyncFn()
 
 
 **AWAIT**
+await  можно использовать только с async
 const asyncFn = async () => {
-	await <Promise>
+	await <Promise> // Внутри асинхронных функций можно ожидать результатов Промисов
 }
 
 asyncFn()
 
+ Пример 
+ Ожидание результата await
+
+ const timerPromise = () =>
+ 	new Promise((resolve, reject) =>
+ 		setTimeout(() => resolve(), 2000))
+
+ const asyncFn = async () => {
+ 	console.log('Timer stats')
+ 	await timerPromise() // Функция дальше не выполняется пока не получен результат Промиса (исполнен/отклонен)
+ 	console.log('Timer ended')
+ }
+
+asyncFn()
+
+****
+Продолжение примера 
+
+ const timerPromise = () =>
+ 	new Promise((resolve, reject) =>
+ 		setTimeout(() => resolve(), 2000))
+
+ const asyncFn = async () => {
+ 	console.log('Timer starts')
+ 	const startTime = performance.now()
+ 	await timerPromise()
+ 	const endTime = performance.now()
+ 	console.log('Timer ended', endTime - startTime)
+ }
+
+asyncFn()
 
 
+**ПЕРЕХОД С ПРОМИСОВ НА ASYNC/AWAIT**
+;
+Пример
+const getData = (url) => 
+	new Promise((resolve, reject) =>
+		fetch(url)
+		.then(response => response.json())
+		.then(json => resolve(json))
+		.catch(error => reject(error))
+	)
+
+getData('https://jsonplaceholder.typicode.com/todos')
+	.then(data => console.log(data))
+	.catch(error => console.log(error.message))
 
 
+Переписываем эту функцию с Промисов на async / await
+;
 
+const getData = async (url) => {
+	const res = await fetch(url)
+	const json = await res.json()
+	return json
+}
 
-
-
-
-
-
+getData('https://jsonplaceholder.typicode.com/todos')
+	.then(data => console.log(data))
+	.catch(error => console.log(error.message))
 
 
 
