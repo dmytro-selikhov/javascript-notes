@@ -81,11 +81,48 @@ console.log(functionalExpression('Ksenia'));
 
 // task 9
 
+const myArrowFunction = () => {
+	return 'Hello, world!'
+}
+
+console.log(myArrowFunction());
 
 
+const myArrowFunction2 = () => 'Hello, world!';
 
+console.log(myArrowFunction2());
 
+// task 10
 
+//Правильно
+/*
+ *Gives back the difference between num1 and num2
+ *@param {number} num1
+ *@param {number} num2
+ *@returns {number} numbers difference
+*/
+
+function myDiff(num1, num2) {
+	return num1 - num2;
+}
+
+myDiff(12, 7);
+console.log(myDiff(12, 7));
+
+// task 11
+
+setTimeout(() => console.log('Hello, World'), 5000);
+
+// task 12
+
+const info = {
+	name: 'Dima',
+	surname: 'Selikhov',
+	favoriteNumber: 14
+}
+
+console.log(`My name is ${info.name} ${info.surname} and my favorite number is ${info.favoriteNumber}`);
+console.log('My name is ' + info.name + ' ' + info.surname + ' and my favorite number is ' + info.favoriteNumber);
 
 
 
