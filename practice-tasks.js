@@ -192,6 +192,170 @@ myArray18.forEach((el) => console.log(el));
 
 // task 19
 
+const myArray19 = ['three', 14, true, 'five', 'long string'];
+
+console.log(myArray19.length);
+
+myArray19.push('nummber 19');
+myArray19.push(55, true);
+
+console.log(myArray19.length);
+
+
+
+// task 20
+
+const timeNow = new Date(); // Создание нового экземпляра даты
+const currentTime = timeNow.getTime(); // Конвертируем в милисекунды
+
+console.log(currentTime);
+
+// task 21
+/*
+ *
+ * 1. Сравните 2 переменные "myVariable1" и "myVariable2".
+ * Выведите в консоль "true", если значение "myVariable1" меньше или равно "myVariable2".
+ *
+ * 2. Преобразуйте обе переменные в числа перед сравнением.
+ */
+
+Вариант 1
+
+let myVariable1 = 10
+let myVariable2 = '5'
+
+	 console.log(parseInt(myVariable1) <= parseInt(myVariable2))
+	  console.log(parseInt(true))
+	  console.log(parseInt(false))
+// Напишите код здесь
+
+myVariable1 = '20'
+myVariable2 = 100
+
+ console.log(parseInt(myVariable1) <= parseInt(myVariable2))
+// Напишите код здесь
+
+Вариант 2
+
+function compare(myVariable1, myVariable2){
+
+	if (+myVariable1 <= +myVariable2) {
+		console.log(true);
+	} else {
+		console.log(false);
+	}
+}
+
+let myVariable1 = 10
+let myVariable2 = '5'
+
+compare(myVariable1, myVariable2);
+
+
+myVariable1 = '20'
+myVariable2 = 100
+
+compare(myVariable1, myVariable2);
+
+// task 22
+/*
+ * 1. Выведите в консоль остаток от деления "myNumber1" на "myNumber2".
+ *
+ * 2. Какой приоритет и ассоциативность
+ * имеет оператор остаток от деления?
+ *
+ * 3. Проверьте ассоциативность самостоятельно
+ */
+
+const myNumber1 = 10 // 10 = 3 + 3 + 3 + 1
+const myNumber2 = 3
+
+console.log(myNumber1%myNumber2);
+
+
+// task 23
+
+console.log(3 || (true && null) || false)
+
+(true && null) // false
+(3 || false || false) // 3
+
+
+console.log(3 || true && null || false) // 3
+
+// task 24
+
+/*
+ *
+ * В каждом выражении замените два оператора на один бинарный
+ */
+
+let a = 10
+
+a += 1
+console.log(a) // 11
+
+a *= 2
+console.log(a) // 22
+
+a -= 5
+console.log(a) // 17
+
+a /= 2
+console.log(a) // 8.5
+
+// task 25
+/*
+*
+ * Определите тип каждой конструкции JavaScript:
+ *  - выражение (expression)
+ *  - инструкция (statement)
+ *  - выражение-инструкция (expression statement)
+ */
+
+// expression statement
+15
+
+// statement
+const myObject = {
+  // Object literal is expression
+  x: 10,
+  y: true,
+}
+
+// expression statement
+myObject.z = 'abc' // <-- expression
+
+// expression statement
+delete myObject.x
+
+// statement
+let newVariable
+
+// expression statement
+newVariable = 30 + 5 // <-- expression
+
+// expression statement
+console.log(newVariable)
+/**             ^
+ *          expression
+ */
+
+// statement
+if (newVariable > 10) {
+  /**       ^
+   *    expression
+   */
+
+  // expression statement
+  console.log(`${newVariable} больше 10`) // <-- newVariable is expression
+  /**         _________________________
+   *                      ^
+   *                 expression
+   */
+}
+
+
 
 
 
