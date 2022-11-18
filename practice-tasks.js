@@ -182,8 +182,15 @@ myBigArray[1] = 'this is long string';
 console.log(myBigArray);
 
 
+// task 18
+
+const myArray18 = ['three', 14, true, 'five', 'long string'];
+
+myArray18.forEach((el) => console.log(el));
 
 
+
+// task 19
 
 
 
