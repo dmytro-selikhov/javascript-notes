@@ -49,7 +49,7 @@ const myNumber = 14;
 const myBoolean = true;
 const myNull = null;
 const myUndefined = undefined;
-const myUndefined;
+let myUndefined;
 const myObject = {};
 const myArray = [];
 
@@ -64,13 +64,22 @@ console.log(typeof myArray);
 
 // task 7
 
+function printMyName() {
+	console.log('Dima');
+}
 
+printMyName();
 
+// task 8
 
+const functionalExpression = function(name) {
+	return `Hello ${name}`
+}
 
+console.log(functionalExpression('Dima'));
+console.log(functionalExpression('Ksenia'));
 
-
-
+// task 9
 
 
 
