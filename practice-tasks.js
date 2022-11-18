@@ -124,6 +124,68 @@ const info = {
 console.log(`My name is ${info.name} ${info.surname} and my favorite number is ${info.favoriteNumber}`);
 console.log('My name is ' + info.name + ' ' + info.surname + ' and my favorite number is ' + info.favoriteNumber);
 
+// task 13
+
+const myString = 'Here is a test string!'
+
+console.log(myString.length);
+
+// task 14
+
+const myFavoriteDish = 'Borsh';
+
+console.log(myFavoriteDish instanceof String)
+console.log(typeof myFavoriteDish);
+
+const upperCaseValue = myFavoriteDish.toUpperCase();	
+console.log(upperCaseValue);
+
+
+//Создание эклемпляра String
+const myString = new String('Dimas');
+console.log(myString instanceof String);
+console.log(typeof myString);
+console.log(myString.toUpperCase());
+
+// task 15
+// My Solution
+
+const greeting = 'Good Morning';
+
+const greeting2 = greeting.replace('Morning', 'Evening');
+
+console.log(greeting2);
+
+
+// task 16
+
+const myArray = [1, 'abc', true];
+
+console.log(myArray[0]);
+console.log(myArray.length);
+
+// task 17
+
+const myBigArray = [true, 'one', 14, 'world'];
+
+// for(let i = 0; i < myBigArray.length; i++){
+// 	console.log(myBigArray[i]);
+// }
+console.log(myBigArray);
+
+console.log('Here we are chenging array');
+myBigArray[1] = 'this is long string';
+
+// for(let i = 0; i < myBigArray.length; i++){
+// 	console.log(myBigArray[i]);
+// }
+console.log(myBigArray);
+
+
+
+
+
+
 
 
 
