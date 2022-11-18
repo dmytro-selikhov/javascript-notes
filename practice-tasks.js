@@ -304,7 +304,13 @@ console.log(a) // 17
 a /= 2
 console.log(a) // 8.5
 
+
+
 // task 25
+
+Выражение - это часть кода, которая возвращает определенное значение(Вызов функции, арифметическая операция)
+Инструкция - это часть кода, выполняющая определенные действия(цикл, условная инструкция)
+Выражение - инструкция - это выражение, которое находится на отдельной строке кода и завершаются точкой с запятой
 /*
 *
  * Определите тип каждой конструкции JavaScript:
@@ -314,46 +320,117 @@ console.log(a) // 8.5
  */
 
 // expression statement
+//выражение-инструкция
 15
 
 // statement
+// инструкция
 const myObject = {
   // Object literal is expression
+  // выражение
   x: 10,
   y: true,
 }
 
 // expression statement
+// выражение-инструкция
 myObject.z = 'abc' // <-- expression
+					// выражение
 
 // expression statement
+// выражение-инструкция
 delete myObject.x
 
 // statement
+// инструкция
 let newVariable
 
 // expression statement
+// выражение-инструкция
 newVariable = 30 + 5 // <-- expression
+					// выражение
 
 // expression statement
+// выражение-инструкция
 console.log(newVariable)
 /**             ^
- *          expression
+ *          expression выражение
  */
 
 // statement
+// инструкция
 if (newVariable > 10) {
   /**       ^
-   *    expression
+   *    expression выражение
    */
 
   // expression statement
-  console.log(`${newVariable} больше 10`) // <-- newVariable is expression
+  // выражение-инструкция
+  console.log(`${newVariable} больше 10`) // <-- newVariable is expression выражение
   /**         _________________________
    *                      ^
-   *                 expression
+   *                 expression выражение
    */
 }
+
+
+// task 26
+/*
+ * Что будет выведено в консоли?
+ * Ответьте на вопрос без запуска кода
+ */
+
+function fn() {
+  console.log('Привет из функции fn')
+
+  return function (a) {
+    console.log(a)
+  }
+}
+
+fn()(true)
+
+// Привет из функции fn
+// true
+
+
+// task 27
+/*
+ * Ответьте на следующие вопросы:
+ *   1. Почему после 13 строки не выдается ошибка?
+ *   2. Почему после строки 18 генерируется TypeError?
+ *
+ * Измените одну строку кода, чтобы эта ошибка исчезла.
+ * Не меняйте строки 13, 18
+ */
+
+let arr = [1, 2] // <-- Объявление переменной используя const
+
+arr.push(3)
+
+console.log(arr)
+// [1, 2, 3]
+
+arr = [1, 2, 3, 4]
+// ДО: Uncaught TypeError: Assignment to constant variable.
+// ПОСЛЕ: Нет ошибки
+
+console.log(arr)
+// [1, 2, 3, 4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
