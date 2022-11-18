@@ -13,8 +13,8 @@
 
 let isStudent;
 
-isStudent = false;
+isStudent = true;
 console.log(isStudent);
 
-isStudent = true;
+isStudent = false;
 console.log(isStudent);
