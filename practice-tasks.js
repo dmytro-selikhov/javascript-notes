@@ -420,6 +420,64 @@ console.log(arr)
 
 
 
+// task 28
+/*
+ *
+ * Измените код так, чтобы ошибка исчезла
+ */
+
+let myFavoriteAnimal = 'Monkey'
+
+console.log(myFavoriteAnimal)
+// 'Monkey'
+
+myFavoriteAnimal = 'Cat'
+
+console.log(myFavoriteAnimal)
+// 'Cat'
+
+// task 29
+
+/*
+ * 1. Исправьте ошибку, которая возникает при включенном строгом режиме
+ *
+ * 2. Что будет, если отключить строгий режим?
+ */
+
+'use strict'
+
+function myFunction() {
+ const a = 2
+  return a
+}
+
+myFunction()
+
+// task 30
+/*
+ * 1. Что будет выведено в консоль?
+ * Постарайтесь ответить без запуска кода.
+ *
+ * 2. Нужно ли как-то исправить этот код?
+ */
+
+setTimeout(function myFn() {
+  console.log('Привет из функции myFn')
+}, 2000)
+
+myFn()
+
+setTimeout(() => console.log('Привет из функции myFn'), 2000)
+
+
+
+
+
+
+
+
+
+
 
 
 
