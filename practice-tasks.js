@@ -557,6 +557,120 @@ console.log(`my Array length is ${myArray.length}`);
 
 
 
+// task 34
+/* *
+ *
+ * 1. Создайте массив с 3 объектами "cars"
+ *
+ * 2. Каждый объект должен иметь три свойства
+ *  - carBrand (строка)
+ *  - price (число)
+ *  - isAvailableForSale (логическое значение)
+ *
+ * 3. Добавьте еще один объект в массив
+ *
+ * 4. Выведите результирующий массив в консоль
+ */
+
+const myCarsArray = [
+	{
+		carBrand: "BMW",
+		price: 10000,
+		isAvailableForSale: true
+	} ,
+	{
+		carBrand: "Pego",
+		price: 8000,
+		isAvailableForSale: false
+	}, 
+	{
+		carBrand: "Mersedes",
+		price: 15000,
+		isAvailableForSale: true
+	}
+
+]
+
+myCarsArray.push({
+		carBrand: "Audi",
+		price: 12000,
+		isAvailableForSale: true
+	})
+
+
+console.log(myCarsArray);
+
+// task 35
+
+/*
+ * 1. Переберите все собственные свойства объекта
+ *
+ * 2. Если имя свойства (ключ) равно "key1" или "key3",
+ * выведите значение свойства в консоль.
+ */
+
+
+// Рабочий вариант 1
+
+const myObject = {
+  key1: true,
+  key5: 10,
+  key3: 'abc',
+  key4: null,
+  key10: NaN,
+}
+
+for (key in myObject){
+	if (key === 'key1' || key === 'key3'){
+		console.log(myObject[key]);	
+	}
+}
+
+
+
+
+// Рабочий вариант 2
+
+const myObject = {
+  key1: true,
+  key5: 10,
+  key3: 'abc',
+  key4: null,
+  key10: NaN,
+}
+
+const objArray = Object.keys(myObject);
+console.log(myObject);
+
+ Object.keys(myObject).forEach(key => {
+ 	if (key === 'key1' || key === 'key3'){
+		console.log(myObject[key]);
+ 	}
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
