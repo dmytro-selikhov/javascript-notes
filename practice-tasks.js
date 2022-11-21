@@ -650,6 +650,63 @@ console.log(myObject);
 })
 
 
+// Рабочий вариант 3
+
+const myObject = {
+  key1: true,
+  key5: 10,
+  key3: 'abc',
+  key4: null,
+  key10: NaN,
+}
+
+const objectKeys = Object.keys(myObject)
+objectKeys.forEach((key) => {
+	if (key === 'key1' || key === 'key3') {
+		console.log(myObject[key]);
+	}
+})
+
+
+// task 36
+/*
+ *
+ * 1. Cгенерируйте новое 4-значное случайное число.
+ * Диапазон для случайного числа 1000 - 9999.
+ *
+ * 2. Убедитесь, что это новое случайное число не совпадает ни с одним из чисел в массиве myNumbers.
+ *
+ * 3. Если совпадает, вам нужно сгенерировать новое 4-значное число.
+ *
+ * 4. Если совпадений нет (новый номер уникален), добавьте его в массив myNumbers.
+ *
+ * ВАЖНО: В решении задачи используйте функции:
+ *  - для генерации случайного числа в заданном диапазоне
+ *  - для добавления случайного числа в массив с возвратом измененного массива
+ */
+
+const MIN = 1000
+const MAX = 9999
+
+const myNumbers = [2355, 7235, 8135, 1762, 2361, 8351]
+
+
+function getRandomInt() {
+	let numberGen =  Math.floor(Math.random() * (MAX - MIN) + MIN); // The maximum is exclusive and the minimum is inclusive
+
+
+	for (const key in myNumbers) {
+		if(myNumbers[key] === numberGen) {
+			 numberGen =  Math.floor(Math.random() * (MAX - MIN) + MIN); // The maximum is exclusive and the minimum is inclusive
+		} else {
+			myNumbers.push(numberGen);
+		}
+	}
+	console.log(myNumbers);
+  }
+
+
+getRandomInt()
 
 
 
@@ -659,13 +716,37 @@ console.log(myObject);
 
 
 
+const MIN = 1000
+const MAX = 9999
+
+const myNumbers = [2355, 7235, 8135, 1762, 2361, 8351]
 
 
+let numberGen = () => {
+	const result =  Math.floor(Math.random() * (MAX - MIN) + MIN); // The maximum is exclusive and the minimum is inclusive
+	return result;
+}
+numberGen()
+console.log(numberGen)
 
 
+let checkArray = () => {
+	for (let i = 0; i < myNumbers.length; i++) {
+		if (myNumbers[i] === numberGen){
+			numberGen();
+		} else {
+			myNumbers.push(numberGen);
+		}
+	}
+	console.log(myNumbers);
+}
 
+let makeFun = () => {
+	numberGen();
+	checkArray();
+}
 
-
+makeFun();
 
 
 
