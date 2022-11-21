@@ -539,8 +539,21 @@ const myArray = [true, null]
 
 console.log(myArray) // [100, "Hello", true, null]
 
+// task 33
+/* *
+ *
+ * 1. Добавить элемент "abc" с индексом 10.
+ *
+ * 2. Выведите результирующий массив в консоль. Объясните результаты.
+ *
+ * 3. Какова длина конечного массива?
+ */
 
+const myArray = [1, 2]
 
+myArray[10] = 'abc';
+console.log(myArray);
+console.log(`my Array length is ${myArray.length}`);
 
 
 
