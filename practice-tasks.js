@@ -483,21 +483,78 @@ setTimeout(() => console.log('Привет из функции myFn'), 2000)
  * "Сообщение номер 4"
  * "Сообщение номер 5"
  */
-
-
-
-setTimeout(() => message, 2000)
-
-
+Попытка
 
 function message(){
 
-	for (let i = 1; i =< 5; i++){
+	for (let i = 1; i <= 5; i++){
+
+		let timerId = setInterval(() => console.log(`Message number ${i}`), 2000);
+
 		console.log(`Message number ${i}`);	
+
+		setTimeout(() => { clearInterval(timerId); }, 15000);
 	}
 
 	
 }
+
+message()
+
+setInterval(() => console.log('Message'), 2000); // Регулярный вывод сообщений
+
+
+Правильное решение:
+
+
+
+let i = 1;
+const messageIntervalID = setInterval(() => {
+
+	
+	console.log(`Message ${i}`)
+	i += 1;
+
+}, 2000);
+
+
+setTimeout(() => clearInterval(messageIntervalID), 12000)
+
+
+// task 32
+/* *
+ * 1. Добавьте элементы а начало массива:
+ *  - сначала строку "Привет"
+ *  - потом число 100
+ *
+ * 2. Выведите длину результирующего массива в консоль
+ */
+
+const myArray = [true, null]
+	
+	myArray.unshift(100, 'Hello');
+	console.log(myArray);
+	console.log(`My array length is ${myArray.length}`)
+// Напишите код здесь
+
+console.log(myArray) // [100, "Hello", true, null]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
