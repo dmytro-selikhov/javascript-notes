@@ -926,6 +926,15 @@ function isArrayEmpty(inputArray) {
 console.log(isArrayEmpty([1, 3]))
 console.log(isArrayEmpty([]))
 
+// Mentors Solution
+function isArrayEmpty(inputArray) {
+  if (inputArray.length > 0) {
+    return 'Массив не пустой'
+  } 
+
+  return 'Массив пустой'
+}
+
 // Solution 2
 
 function isArrayEmpty(inputArray) {
@@ -944,9 +953,19 @@ value
 	? console.log('True') // True
 	: console.log('False')
 
+// Mentors Solution
+function isArrayEmpty(inputArray) {
+  return inputArray.length > 0 
+   ? 'Массив не пустой'
+   : 'Массив пустой'
+  }
+
+console.log(isArrayEmpty([1, 3]))
+console.log(isArrayEmpty([]))
 
 
-// Solution 2
+
+// Solution 3
 
 const isArrayEmpty = (inputArray) => {
    inputArray.length > 0 
@@ -957,6 +976,160 @@ const isArrayEmpty = (inputArray) => {
 
 console.log(isArrayEmpty([1, 3]))
 console.log(isArrayEmpty([]))
+
+// Mentors Solution
+
+// Явное возвращение результата
+const isArrayEmpty = (inputArray) => {
+  return inputArray.length > 0 
+   ? 'Массив не пустой'
+   : 'Массив пустой'
+  }
+
+
+console.log(isArrayEmpty([1, 3]))
+console.log(isArrayEmpty([]))
+
+
+// Не явное возвращение результата
+const isArrayEmpty = (inputArray) =>  inputArray.length > 0 ? 'Массив не пустой' : 'Массив пустой'
+
+console.log(isArrayEmpty([1, 3]))
+console.log(isArrayEmpty([]))
+
+
+// task 39
+/*
+ *
+ * 1. Создайте функцию "cityInfo" с двумя параметрами,
+ * которая возвращает строку
+ * "London is at the index 0 in the myCities array"
+ *
+ * 2. Переберите все элементы массива "myCities",
+ * для каждого элемента вызовите функцию "cityInfo"
+ * и выведите в консоль результат вызова функции
+ */
+
+// Solution 1
+
+const myCities = ['London', 'New York', 'Singapore']
+
+
+function cityInfo(city, index) {
+
+	let result = `${city} is at the ${index} in the myCities array`;
+	
+	console.log(result);
+	// return result;
+}
+
+
+for (let i = 0; i < myCities.length; i++){
+	cityInfo( myCities[i], i);
+}
+
+
+
+// Solution 2
+const myCities = ['London', 'New York', 'Singapore']
+
+const cityInfo = () =>{
+	myCities.forEach((city, index) => {
+		let result = `${city} is at the ${index} in the myCities array`;
+	
+		console.log(result);
+		// return result;
+	}) 
+}
+
+cityInfo()
+
+
+// Mentors Solution
+
+const myCities = ['London', 'New York', 'Singapore']
+
+const cityInfo = (city, index) => `${city} is at the ${index} in the myCities array`;
+
+myCities.forEach((city, index) => console.log(cityInfo(city, index)))
+
+
+
+// task 39
+/* 
+ * 1. Конвертируйте массив JSON объектов в массив объектов JavaScript
+ *
+ * 2. Выведите в консоль результирующий массив
+ *
+ * 3. Выведите в консоль "postId" второго объекта
+ *
+ * 4. Выведите в консоль "commentsQuantity" последнего объекта
+ */
+
+//Solution
+
+const postsJSON = [
+  '{"postId":1355,"commentsQuantity":5}',
+  '{"postId":5131,"commentsQuantity":13}',
+  '{"postId":6134,"commentsQuantity":2}',
+  '{"postId":2351,"commentsQuantity":8}',
+]
+
+const newArray = [];
+let postStringified;
+
+const converFunc = () => {
+	postsJSON.forEach((el) => {
+		postStringified = JSON.parse(el)
+		newArray.push(postStringified)
+	})
+	return newArray;
+}
+
+console.log(newArray);
+converFunc()
+
+console.log(newArray[1].postId)
+console.log(newArray[3].commentsQuantity)
+
+console.log(convectoredObject[1]['postId']);
+console.log(convectoredObject[3]['commentsQuantity']);
+
+//Mentors Solution
+
+ const postsJSON = [
+  '{"postId":1355,"commentsQuantity":5}',
+  '{"postId":5131,"commentsQuantity":13}',
+  '{"postId":6134,"commentsQuantity":2}',
+  '{"postId":2351,"commentsQuantity":8}',
+]
+
+const postsJS = postsJSON.map((post) => JSON.parse(post))
+
+console.log(postsJS)
+console.log(postsJS[1].postId);
+console.log(postsJS[postsJS.length - 1].commentsQuantity);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
