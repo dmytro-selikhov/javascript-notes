@@ -846,15 +846,117 @@ const myObject = {
 Object.prototype.country = 'England'
 
 for (let key in myObject) {
+	if (myObject.hasOwnProperty(key)) {
+		  console.log(myObject[key])
+		}
+
+}
+
+myObject.hasOwnProperty(key)
+
+
+
+
+const myObject = {
+  name: 'Mike',
+  age: 30,
+  city: 'London',
+}
+console.log(myObject)
+
+Object.prototype.country = 'England'
+
+for (let key in myObject) {
   console.log(myObject[key])
 }
 
 
+//Решение ментора
+
+
+const myObject = {
+  name: 'Mike',
+  age: 30,
+  city: 'London',
+}
+
+Object.prototype.country = 'England'
+
+for (let key in myObject) {
+	if (myObject.hasOwnProperty(key)) {
+		  console.log(myObject[key])
+		}
+
+}
+
+
+// task 38
+/*
+ *
+ * 1. Перепишите инструкцию "if .. else" без использования "else"
+ *
+ * 2. Перепишите содержимое функции, используя тернарный оператор
+ *
+ * 3. Замените обычную функцию на стрелочную функцию
+ */
+
+function isArrayEmpty(inputArray) {
+  if (inputArray.length > 0) {
+    return 'Массив не пустой'
+  } else {
+    return 'Массив пустой'
+  }
+}
+
+console.log(isArrayEmpty([1, 3]))
+console.log(isArrayEmpty([]))
+
+// Solution 1
+
+function isArrayEmpty(inputArray) {
+  if (inputArray.length > 0) {
+    return 'Массив не пустой'
+  } 
+  if (!inputArray.length) {
+    return 'Массив пустой'
+  }
+}
+
+
+console.log(isArrayEmpty([1, 3]))
+console.log(isArrayEmpty([]))
+
+// Solution 2
+
+function isArrayEmpty(inputArray) {
+   inputArray.length > 0 
+   ? console.log('Массив не пустой')
+   : console.log('Массив пустой')
+  }
+
+
+console.log(isArrayEmpty([1, 3]))
+console.log(isArrayEmpty([]))
+
+
+// Example
+value
+	? console.log('True') // True
+	: console.log('False')
 
 
 
+// Solution 2
+
+const isArrayEmpty = (inputArray) => {
+   inputArray.length > 0 
+   ? console.log('Массив не пустой')
+   : console.log('Массив пустой')
+  }
 
 
+console.log(isArrayEmpty([1, 3]))
+console.log(isArrayEmpty([]))
 
 
 
