@@ -755,18 +755,99 @@ makeFun();
 
 
 
+const MIN = 1000
+const MAX = 9999
+let result = 0;
+
+let myRandom = () => {
+	result = Math.floor(Math.random() * (MAX - MIN) + MIN);
+	console.log(result);
+
+    return result;
+}
+
+  myRandom()
 
 
 
+ const myNumbers = [2355, 7235, 8135, 1762, 2361, 8351]	
 
 
+for (const key in myNumbers) {
+	if ( myRandom !== myNumbers[key]) {
+		myNumbers.push(myRandom)
+		console.log(myRandom);
+		console.log(myNumbers);
+
+	} else {
+		console.log('We have same number in array')
+		console.log(myRandom)
+	}
+		
+}
 
 
+// Решение лектора
+
+const MIN = 1000
+const MAX = 9999
+
+// const MIN = 1
+// const MAX = 10
 
 
+const myNumbers = [2355, 7235, 8135, 1762, 2361, 8351]
+// const myNumbers = [1, 3, 5, 7, 9, 10];
 
 
+const randomNumber = (min, max) => {
+  	return Math.floor(Math.random() * (max - min + 1) + min); 
+}
 
+// console.log(randomNumber(MIN, MAX));
+
+
+const addRandomNumberToArray = (arr, min, max) =>{
+	let newRandomNumber;
+	const updatedArray = [ ...arr]
+
+	do {
+		newRandomNumber = randomNumber(min, max);
+		console.log(newRandomNumber);
+	} while (updatedArray.includes(newRandomNumber))
+	
+	updatedArray.push(newRandomNumber);
+
+	return updatedArray;
+
+}
+
+ const updatedArray =  addRandomNumberToArray(myNumbers, MIN, MAX)
+
+console.log('UPDATED ARRAY', updatedArray)
+console.log('ORIGINAL ARRAY', myNumbers)
+
+// console.log(myNumbers.includes(2355))
+
+
+// task 37
+/*
+ * Внутри цикла "for .. in" перед выводом значения свойства в консоль
+ * выполните проверку того, что свойство является
+ * собственным свойством объекта
+ */
+
+const myObject = {
+  name: 'Mike',
+  age: 30,
+  city: 'London',
+}
+
+Object.prototype.country = 'England'
+
+for (let key in myObject) {
+  console.log(myObject[key])
+}
 
 
 
