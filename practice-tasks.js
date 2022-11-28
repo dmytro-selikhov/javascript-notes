@@ -1103,15 +1103,19 @@ console.log(convectoredObject[3]['commentsQuantity']);
   '{"postId":6134,"commentsQuantity":2}',
   '{"postId":2351,"commentsQuantity":8}',
 ]
+// Option 1
+// const postsJS = postsJSON.map((post) => JSON.parse(post))
 
-const postsJS = postsJSON.map((post) => JSON.parse(post))
+// Option 2
+const postsJS = postsJSON.map(JSON.parse)
+
 
 console.log(postsJS)
 console.log(postsJS[1].postId);
 console.log(postsJS[postsJS.length - 1].commentsQuantity);
 
 
-
+// task 40
 
 
 
