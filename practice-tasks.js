@@ -1203,6 +1203,22 @@ const b = [4, 10, 14, 25, 25, 50]
 const c = [150, 132, 80, 40]
 const d = [15, 26, 10, 23, 85]
 
+
+function arraySortInfo(inputArray) {
+	
+	let message;
+
+
+	inputArray.forEach((el) => {
+		if (typeof el !== 'number') {
+			console.log(`Some elements are not numbers`)
+		} else {
+			// console.log(el)
+		}
+	})
+
+}
+
 console.log(arraySortInfo(a)) // Некоторые элементы не являются числами
 console.log(arraySortInfo(b)) // Массив отсортирован по возрастанию
 console.log(arraySortInfo(c)) // Массив отсортирован по убыванию
