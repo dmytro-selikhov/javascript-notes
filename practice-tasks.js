@@ -1262,17 +1262,25 @@ console.log(arraySortInfo(d)) // Массив не отсортирован
 // Mentors Solution
 
 
-const a = [5, 'abc', 10, 1]
+const a = [5, false, 10, 1]
 const b = [4, 10, 14, 25, 25, 50]
 const c = [150, 132, 80, 40]
 const d = [15, 26, 10, 23, 85]
 
 const arraySortInfo = (inputArray) => {
-	if (inputArray.find((element) => typeof element !== 'number')){
+	if (inputArray.some((element) => typeof element !== 'number')){
 		return 'Некоторые элементы не являются числами';
 	}
 
-	if (inputArray.every((element, index) => index > 0 ? element >= inputArray[index - 1]))
+	if (inputArray.every((element, index) => index > 0 ? element >= inputArray[index - 1] : true)) {
+		return 'Массив отсортирован по возрастанию';
+	}
+
+	if (inputArray.every((element, index) => index > 0 ? element <= inputArray[index - 1] : true)) {
+		return 'Массив отсортирован по убывани';
+	}
+
+	
 
 	return 'Массив не отсортирован'; 
 }
@@ -1287,6 +1295,31 @@ console.log(arraySortInfo(c)) // Массив отсортирован по уб
 console.log(arraySortInfo(d)) // Массив не отсортирован
 
 
+// task 43
+/*
+ *
+ * 1. Создайте функцию "areArraysEqual" с двумя параметрами "firstArray" и "secondArray"
+ *
+ * 2. Верните "true" если два массива равны, а именно:
+ *  - имеют одинаковое количество элементов
+ *  - все элементы совпадают, например, firstArray[0] === secondArray[0] и т. д.)
+ *
+ * 3. В противном случае верните "false"
+ *
+ * ВАЖНО: Исходите из того, что массивы содержат элементы примитивных типов
+ */
+
+const a = [1, 2, 3]
+const b = [1, 2, 3]
+
+console.log(a === b) // false (Почему?)
+
+const c = [2, 1, 3]
+const d = [1, 2, 3, 4]
+
+console.log(areArraysEqual(a, b)) // true
+console.log(areArraysEqual(a, c)) // false
+console.log(areArraysEqual(a, d)) // false
 
 
 
