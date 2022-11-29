@@ -1323,6 +1323,119 @@ console.log(areArraysEqual(a, d)) // false
 
 
 
+// Solution
+
+const a = [1, 2, 3]
+const b = [1, 2, 3]
+
+console.log(a === b) // false (Почему?)
+
+const c = [2, 1, 3]
+const d = [1, 2, 3, 4]
+
+const areArraysEqual = (firstArray, secondArray) => {
+	return firstArray.length === secondArray.length && firstArray.every((element, index) => element === secondArray[index]);
+
+}
+
+
+console.log(areArraysEqual(a, b)) // true
+console.log(areArraysEqual(a, c)) // false
+console.log(areArraysEqual(a, d)) // false
+
+
+// Solution 2
+
+const a = [1, 2, 3]
+const b = [1, 2, 3]
+
+console.log(a === b) // false (Почему?)
+
+const c = [2, 1, 3]
+const d = [1, 2, 3, 4]
+
+const areArraysEqual = (firstArray, secondArray) => {
+  if (firstArray.length !== secondArray.length) return false;
+  else {
+    // Comparing each element of your array
+    for (let i = 0; i < firstArray.length; i++) {
+      if (firstArray[i] !== secondArray[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+};
+
+
+console.log(areArraysEqual(a, b)) // true
+console.log(areArraysEqual(a, c)) // false
+console.log(areArraysEqual(a, d)) // false
+
+
+
+// Mentors Solution
+
+
+const a = [1, 2, 3]
+const b = [1, 2, 3]
+
+console.log(a === b) // false (Почему?)
+
+const c = [2, 1, 3]
+const d = [1, 2, 3, 4]
+
+const areArraysEqual = (firstArray, secondArray) => {
+ 	if (firstArray.length === secondArray.length 
+ 		&& 
+ 		firstArray.every((element, index) => element === secondArray[index])){
+ 		return true
+ 	} 
+ 	return false
+}
+
+console.log(areArraysEqual(a, b)) // true
+console.log(areArraysEqual(a, c)) // false
+console.log(areArraysEqual(a, d)) // false
+
+
+// task 44
+/*
+ *
+ * 1. Создайте функцию isElementInArray с двумя параметрами "inputArray" и "searchElement"
+ *
+ * 2. Если "searchElement" найден в "inputArray" - вернуть "true"
+ *
+ * 3. В противном случае вернуть "false"
+ */
+
+const transports = ['Bus', 'Car', 'Bicycle', 'Airplane']
+
+console.log(isElementInArray(transports, 'Bus')) // true
+console.log(isElementInArray(transports, 'Phone')) // false
+console.log(isElementInArray(transports, 'Airplane')) // true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
