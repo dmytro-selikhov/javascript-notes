@@ -1472,7 +1472,6 @@ console.log(isElementInArray(25, primitiveTypesArray)) // true
 // Solution 
 
 const isElementInArray = (searchElement, inputArray) => {
-	let info;
 	if(typeof searchElement !== 'Object'){
 		return inputArray.includes(searchElement);
 	} else {
@@ -1480,16 +1479,148 @@ const isElementInArray = (searchElement, inputArray) => {
 		return JSON.stringify(el) === JSON.stringify(searchElement);
 		})
 	}
+}
+
+
+const tags = [
+  ['javascript', 'es6'],
+  ['css', 'flexbox'],
+  ['html', 'web-browser'],
+]
+
+const fruits = [
+  { title: 'Orange', quantity: 10 },
+  { title: 'Banana', quantity: 5 },
+  { title: 'Apple', quantity: 25 },
+]
+
+const primitiveTypesArray = [25, 'x', true, undefined, null]
+
+console.log(isElementInArray(['css', 'flexbox'], tags)) // true
+
+console.log(isElementInArray(['flexbox', 'css'], tags)) // false
+
+console.log(isElementInArray({ title: 'Apple', quantity: 25 }, fruits)) // true
+
+console.log(isElementInArray({ title: 'Banana' }, fruits)) // false
+
+console.log(isElementInArray(25, primitiveTypesArray)) // true
 
 
 
+// Mentors Solution
+
+
+const tags = [
+  ['javascript', 'es6'],
+  ['css', 'flexbox'],
+  ['html', 'web-browser'],
+]
+
+const fruits = [
+  { title: 'Orange', quantity: 10 },
+  { title: 'Banana', quantity: 5 },
+  { title: 'Apple', quantity: 25 },
+]
+
+const primitiveTypesArray = [25, 'x', true, undefined, null]
+
+
+const isElementInArray = (searchElement, inputArray) => {
+	
+	 if (typeof searchElement !== 'object'){
+		return inputArray.includes(searchElement);
+	}
+
+	return inputArray
+	.map((el) => JSON.stringify(el))
+	.includes(JSON.stringify(searchElement))
 
 }
 
 
+console.log(isElementInArray(['css', 'flexbox'], tags)) // true
+
+console.log(isElementInArray(['flexbox', 'css'], tags)) // false
+
+console.log(isElementInArray({ title: 'Apple', quantity: 25 }, fruits)) // true
+
+console.log(isElementInArray({ title: 'Banana' }, fruits)) // false
+
+console.log(isElementInArray(25, primitiveTypesArray)) // true
+
+// Solution 2
 
 
+const tags = [
+  ['javascript', 'es6'],
+  ['css', 'flexbox'],
+  ['html', 'web-browser'],
+]
 
+const fruits = [
+  { title: 'Orange', quantity: 10 },
+  { title: 'Banana', quantity: 5 },
+  { title: 'Apple', quantity: 25 },
+]
+
+const primitiveTypesArray = [25, 'x', true, undefined, null]
+
+
+const isElementInArray = (searchElement, inputArray) => {
+	
+	 if (typeof searchElement !== 'object'){
+		return inputArray.includes(searchElement);
+	}
+
+	const convertedArray = inputArray.map((el) => JSON.stringify(el));
+	console.log(convertedArray);
+	
+	const convertedSearch = JSON.stringify(searchElement);
+	console.log(convertedSearch);
+
+	return convertedArray.includes(convertedSearch);
+
+}
+
+
+console.log(isElementInArray(['css', 'flexbox'], tags)) // true
+
+console.log(isElementInArray(['flexbox', 'css'], tags)) // false
+
+console.log(isElementInArray({ title: 'Apple', quantity: 25 }, fruits)) // true
+
+console.log(isElementInArray({ title: 'Banana' }, fruits)) // false
+
+console.log(isElementInArray(25, primitiveTypesArray)) // true
+
+
+// task 46
+
+/*
+ * 1. Создайте функцию "pushIfUnique" с двумя параметрами "inputArray" и "newElement"
+ *
+ * 2. Если "inputArray" уже содержит "newElement",
+ * выведите в консоль "{newElement} уже находится в массиве"
+ *
+ * 3. В противном случае добавьте "newElement" в "inputArray"
+ *
+ * ПРИМЕЧАНИЕ: Мы предполагаем, что "inputArray" содержит элементы только примитивных типов
+ */
+
+const myNumbers = [123, 50, 27]
+
+pushIfUnique(myNumbers, 50) // "50 уже в массиве"
+console.log(myNumbers) // [123, 50, 27]
+
+pushIfUnique(myNumbers, 80)
+console.log(myNumbers) // [123, 50, 27, 80]
+
+pushIfUnique(myNumbers, 80) // "80 уже в массиве"
+console.log(myNumbers) // [123, 50, 27, 80]
+
+pushIfUnique(myNumbers, 77)
+console.log(myNumbers) // [123, 50, 27, 80, 77]
 
 
 
