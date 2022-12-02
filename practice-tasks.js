@@ -1469,6 +1469,23 @@ console.log(isElementInArray({ title: 'Banana' }, fruits)) // false
 console.log(isElementInArray(25, primitiveTypesArray)) // true
 
 
+// Solution 
+
+const isElementInArray = (searchElement, inputArray) => {
+	let info;
+	if(typeof searchElement !== 'Object'){
+		return inputArray.includes(searchElement);
+	} else {
+		 inputArray.forEach((el) =>{
+		return JSON.stringify(el) === JSON.stringify(searchElement);
+		})
+	}
+
+
+
+
+}
+
 
 
 
