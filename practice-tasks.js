@@ -1622,10 +1622,91 @@ console.log(myNumbers) // [123, 50, 27, 80]
 pushIfUnique(myNumbers, 77)
 console.log(myNumbers) // [123, 50, 27, 80, 77]
 
+// My Solution
+
+const pushIfUnique = (inputArray, newElement) => {
+	if (inputArray.includes(newElement)) {
+		console.log(`${newElement} already in ${inputArray}`);
+	}
+
+	return inputArray.push(newElement);
+}
+
+
+const myNumbers = [123, 50, 27]
+
+pushIfUnique(myNumbers, 50) // "50 уже в массиве"
+console.log(myNumbers) // [123, 50, 27]
+
+pushIfUnique(myNumbers, 80)
+console.log(myNumbers) // [123, 50, 27, 80]
+
+pushIfUnique(myNumbers, 80) // "80 уже в массиве"
+console.log(myNumbers) // [123, 50, 27, 80]
+
+pushIfUnique(myNumbers, 77)
+console.log(myNumbers) // [123, 50, 27, 80, 77]
+
+
+// Mentors Solution
+
+const pushIfUnique = (inputArray, newElement) => {
+	if (inputArray.includes(newElement)) {
+		return console.log(`${newElement} already in array`);
+	}
+
+	inputArray.push(newElement);
+}
 
 
 
+const myNumbers = [123, 50, 27]
 
+pushIfUnique(myNumbers, 50) // "50 уже в массиве"
+console.log(myNumbers) // [123, 50, 27]
+
+pushIfUnique(myNumbers, 80)
+console.log(myNumbers) // [123, 50, 27, 80]
+
+pushIfUnique(myNumbers, 80) // "80 уже в массиве"
+console.log(myNumbers) // [123, 50, 27, 80]
+
+pushIfUnique(myNumbers, 77)
+console.log(myNumbers) // [123, 50, 27, 80, 77]
+
+
+// task 47
+
+/*
+ * 1. Создайте функцию "popularPostsIds" с двумя параметрами "posts" и "minimalComentsQty"
+ *
+ * 2. Эта функция "popularPostsIds" должна возвращать массив идентификаторов постов сообщений,
+ * у которых количество комментариев не меньше "minimalComentsQty"
+ */
+
+const inputPosts = [
+  {
+    title: 'Как быстро выучить JavaScript?',
+    postId: 3421,
+    comments: 25,
+  },
+  {
+    title: 'Где используется JavaScript?',
+    postId: 5216,
+    comments: 3,
+  },
+  {
+    title: 'Какая разница между React и Angular?',
+    postId: 8135,
+    comments: 12,
+  },
+]
+
+console.log(popularPostsIds(inputPosts, 10)) // [3421, 8135]
+
+console.log(popularPostsIds(inputPosts, 15)) // [3421]
+
+console.log(popularPostsIds(inputPosts, 50)) // []
 
 
 
