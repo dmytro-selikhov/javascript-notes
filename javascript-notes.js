@@ -2433,6 +2433,91 @@ console.log(filterResult)
 
 
 
+//push(element, element2, elementN)
+// Добавляет элемент в конец массива
+
+const data = []
+
+const str = 'Learn Javascript'
+data.push(str, 2)
+console.log(data)
+
+
+
+//split('')
+// Разбивает строку на массив
+// В качестве аргумента принимает разделитель по которому разбивается строка
+// При передаче пустой строки('') получаем посимвольный архив
+
+const str = 'Learn javascript'
+
+const arrStr = str.split('')
+console.log(arrStr)
+
+
+//join()
+// Соединяет массив в строк
+// Разделитель по умолчанию - запятая(,)
+
+const newStr = arrStr.join('')
+console.log(newStr)
+
+
+const newStr2 = arrStr.join('+')
+console.log(newStr2)
+
+
+
+//splice(start, numbers, element )
+// Первый параметр start - индекс элемента с которого начинается вставка/удаление элементов 
+// Второй параметр numbers - количество элементов
+// Третий параметр element - значение, которое нужно вставить на это место
+// Используется для вставки и/или удаления элемента в середину массива
+// Изменяет сам массив
+
+const arr = [1, 3, true, 'Hello world', {id: 1, name: 'Dima'}, false, {id: 2, name: 'Ksu'}, [12, 22]]
+
+const strings = ['Apple', 'Pen']
+
+arr.splice(2, 1, ...strings)
+console.log(arr);
+
+
+
+//flat(levels)
+// Используется для работы с многомерными массивами
+// levels - количество уровней вложенности массивов
+// Если количество уровней неизвестно, то передаем Infinity как аргумент
+// Выводит значения внутренних массиво в одномерный
+const numbers = [1, 2, [3, 4, [5, 6]]]
+const newNumbers = numbers.flat(2)
+
+console.log(newNumbers)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
