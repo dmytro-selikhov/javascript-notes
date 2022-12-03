@@ -2372,6 +2372,75 @@ try {
 
 
 
+//forEach(element, index, array)
+// Перебирает каждый элемент, возвращает undefind
+const arr = [1, 3, true, 'Hello world', {id: 1, name: 'Dima'}, false, {id: 2, name: 'Ksu'}, [12, 22]]
+
+arr.forEach((elem, index) => console.log(typeof elem  + ` ${index}`))
+
+
+
+//map(element, index, array)
+// Перебирает каждый элемент, возвращает новый массив
+
+const numbers = [1, 2, 3, 4, 5]
+const mapResult = numbers.map((element, index) => element * index)
+
+console.log(mapResult)
+
+
+
+//includes(element, index)
+// c index начинается поиск element
+// Проверяет наличие искомого значения внутри массива, возвращает true или false
+
+const arr = [1, 3, true, 'Hello world', {id: 1, name: 'Dima'}, false, {id: 2, name: 'Ksu'}, [12, 22]]
+
+const includesResult = arr.includes(3, 0)
+console.log(includesResult)
+
+
+
+//find(element, index, array)  
+// Можно использовать this в callback функции
+// Проходит по массиву и возвращает элемент, подходящий по условию(true)
+// Работает до первого нахождения(true) и прекращает свою работу
+// Возвращает сам элемент
+
+const arr = [1, 3, true, 'Hello world', {id: 1, name: 'Dima'}, false, {id: 2, name: 'Ksu'}, [12, 22]]
+
+const findResult = arr.find((elem) => elem.id === 3 )
+console.log(findResult)
+
+
+
+
+//findIndex() - возвращает искомого элемента
+const arr = [1, 3, true, 'Hello world', {id: 1, name: 'Dima'}, false, {id: 2, name: 'Ksu'}, [12, 22]]
+
+const findResult = arr.findIndex((elem) => elem.id)
+console.log(findResult)
+
+
+
+// filter()
+// Возвращает все элементы, подходящие условию
+
+const arr = [1, 3, true, 'Hello world', {id: 1, name: 'Dima'}, false, {id: 2, name: 'Ksu'}, [12, 22]]
+
+const filterResult = arr.filter((el) => typeof el === 'object')
+console.log(filterResult)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
