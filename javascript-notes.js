@@ -2496,13 +2496,44 @@ console.log(newNumbers)
 
 
 
+//reduce((acc,elem) =>{}, 0)
+// acc - Переменная, в которую суммируются элементы массива
+// elem - Элемент, передаваемый в тело функции 
+
+const array = [1, 2, 3, 4, 5];
+
+let total = array.reduce((acc, elem) =>{
+	return acc + elem;
+}, 0)
+
+console.log(total);
+
+
+const arrayFruits = ['apple', 'banana', 'peach', 'orange']
+
+let fruits = arrayFruits.reduce((acc, elem) => {
+	acc[elem] = 1;
+	return acc;
+}, {})
+
+console.log(fruits);
 
 
 
 
 
+const arrayFruits = ['apple', 'banana', 'peach', 'orange', 'apple', 'banana', 'peach', 'orange', 'orange', 'orange']
 
+let fruits = arrayFruits.reduce((acc, elem) => {
+	if(acc[elem]){
+		acc[elem] += 1;
+	} else {
+		acc[elem] = 1;
+	}
+	return acc;
+}, {})
 
+console.log(fruits);
 
 
 
