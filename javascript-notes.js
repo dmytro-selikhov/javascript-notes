@@ -2537,6 +2537,8 @@ console.log(fruits);
 
 
 
+// Some notes
+
 
 
 
