@@ -1702,6 +1702,38 @@ const inputPosts = [
   },
 ]
 
+
+
+
+console.log(popularPostsIds(inputPosts, 10)) // [3421, 8135]
+
+console.log(popularPostsIds(inputPosts, 15)) // [3421]
+
+console.log(popularPostsIds(inputPosts, 50)) // []
+
+// Solution
+
+
+const inputPosts = [
+  {
+    title: 'Как быстро выучить JavaScript?',
+    postId: 3421,
+    comments: 25,
+  },
+  {
+    title: 'Где используется JavaScript?',
+    postId: 5216,
+    comments: 3,
+  },
+  {
+    title: 'Какая разница между React и Angular?',
+    postId: 8135,
+    comments: 12,
+  },
+]
+
+
+
 const newArr = []
 const popularPostsIds = (posts, minimalComentsQty) => {
 	posts.reduce((el) => {
@@ -1713,23 +1745,91 @@ const popularPostsIds = (posts, minimalComentsQty) => {
 }
 
 
+
 console.log(popularPostsIds(inputPosts, 10)) // [3421, 8135]
 
 console.log(popularPostsIds(inputPosts, 15)) // [3421]
 
 console.log(popularPostsIds(inputPosts, 50)) // []
 
-//     Some nots are here
-// Some other comment is here
 
 
+// Mentors Solution
 
 
+const inputPosts = [
+  {
+    title: 'Как быстро выучить JavaScript?',
+    postId: 3421,
+    comments: 25,
+  },
+  {
+    title: 'Где используется JavaScript?',
+    postId: 5216,
+    comments: 3,
+  },
+  {
+    title: 'Какая разница между React и Angular?',
+    postId: 8135,
+    comments: 12,
+  },
+]
+
+function popularPostsIds(posts, minimalComentsQty) {
+	return posts.reduce((postsIds, post) => post.comments >= minimalComentsQty ? postsIds.concat([post.postId]) : postsIds, [])
+}
+
+console.log(popularPostsIds(inputPosts, 10)) // [3421, 8135]
+
+console.log(popularPostsIds(inputPosts, 15)) // [3421]
+
+console.log(popularPostsIds(inputPosts, 50)) // []
 
 
+// task 48
+/*
+ - Использование метода "reduce" для создания объекта
+ *
+ * 1. Создайте функцию "quantitiesByCategories" с одним параметром "products"
+ *
+ * 2. Эта функция должна возвращать объект с ключами,
+ * равными категориям, и значениями,
+ * равными сумме всех количеств в каждой категории
+ */
 
+const inputProducts = [
+  {
+    title: 'Phone case',
+    price: 23,
+    quantity: 2,
+    category: 'Accessories',
+  },
+  {
+    title: 'Android phone',
+    price: 150,
+    quantity: 1,
+    category: 'Phones',
+  },
+  {
+    title: 'Headphones',
+    price: 78,
+    quantity: 1,
+    category: 'Accessories',
+  },
+  {
+    title: 'Sport Watch',
+    price: 55,
+    quantity: 2,
+    category: 'Watches',
+  },
+]
 
-
+console.log(quantitiesByCategories(inputProducts))
+/* {
+  Accessories: 3,
+  Phones: 1,
+  Watches: 2
+} */
 
 
 
