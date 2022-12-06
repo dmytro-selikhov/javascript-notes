@@ -1677,7 +1677,7 @@ console.log(myNumbers) // [123, 50, 27, 80, 77]
 
 // task 47
 
-/*
+/* Использование метода "reduce" для создания массива
  * 1. Создайте функцию "popularPostsIds" с двумя параметрами "posts" и "minimalComentsQty"
  *
  * 2. Эта функция "popularPostsIds" должна возвращать массив идентификаторов постов сообщений,
@@ -1701,6 +1701,17 @@ const inputPosts = [
     comments: 12,
   },
 ]
+
+const newArr = []
+const popularPostsIds = (posts, minimalComentsQty) => {
+	posts.reduce((el) => {
+		if (el.postId >= minimalComentsQty) {
+			newArr.push(el.postId)
+		}
+	}, newArr)
+	return newArr
+}
+
 
 console.log(popularPostsIds(inputPosts, 10)) // [3421, 8135]
 
