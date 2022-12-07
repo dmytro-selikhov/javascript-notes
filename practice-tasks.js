@@ -1944,7 +1944,7 @@ const inputProducts = [
 // console.log(inputProducts) // Оригинальный массив не должен измениться
 
 
-
+// Additional notes from MacOS
 
 
 
