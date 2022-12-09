@@ -1979,6 +1979,8 @@ function sortProductsByPrice(products) {
 }
 
 
+//Preparetion to work 
+
 
 
 
