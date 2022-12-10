@@ -1980,6 +1980,7 @@ function sortProductsByPrice(products) {
 
 
 //Preparetion to work 
+//Other commit
 
 
 
