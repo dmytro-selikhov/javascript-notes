@@ -2116,6 +2116,27 @@ console.log(meanScore(/* все элементы из массива "scores4" *
 // Все аргументы в вызове функции должны быть числами!
 
 
+//Solution 
+
+const meanScore = (arr) => {
+	const newArr = [...arr]
+	let newArrLength = newArr.length;
+	let middle;
+	let result;
+	const finRes = newArr.reduce((sum, el) => {
+		if (typeof el !== 'number'){
+			return `Все аргументы в вызове функции должны быть числами!`
+		} else {
+			sum += el;
+			middle = sum / newArrLength;
+			result = middle.toFix(2)
+			return result
+		}
+	}, 0)
+
+	return finRes
+
+}
 
 
 
