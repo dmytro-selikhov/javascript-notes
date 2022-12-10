@@ -1944,7 +1944,7 @@ const inputProducts = [
 // console.log(inputProducts) // Оригинальный массив не должен измениться
 
 
-// MenSolution
+// Mentors Solution
 
 const inputProducts = [
   {
@@ -1974,14 +1974,18 @@ const inputProducts = [
 ]
 
 
-function sortProductsByPrice(products) {
-	// body...
+const sortProductsByPrice = (products) => {
+	return products.sort((a, b) => a.price - b.price)
 }
 
 
-//Preparetion to work 
-//Other commit
 
+
+const sortedProducts = sortProductsByPrice(inputProducts)
+
+console.log(sortedProducts) // Массив отсортированных товаров
+
+console.log(inputProducts) // Оригинальный массив не должен измениться
 
 
 
