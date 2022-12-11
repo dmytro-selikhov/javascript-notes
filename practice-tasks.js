@@ -2400,6 +2400,7 @@ console.log(myDogPhoto[testDimension1]) // true
 console.log(myDogPhoto[testDimension2]) // undefined
 
 
+// My Solution 
 
 
 
