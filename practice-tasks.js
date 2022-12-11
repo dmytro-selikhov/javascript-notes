@@ -2164,18 +2164,86 @@ console.log(meanScore(/* все элементы из массива "scores4" *
 
 // Mentors Solution
 
+// test example
 const myFn = (a, ...b) => { // Воспользовались rest оператором и получили в "b" массив из [5, 7]
 	console.log(a)
 	console.log(b)
 }
-
-myFn(4, 5, 7)
-
-
+ 
+myFn(4, 5, 7) 
 
 
 
+const scores1 = [0, 1.5, 2.5, 3.7]
+const scores2 = [1.7, 4.5, 0, 4.9, 5.0, 4.2]
+const scores3 = [1.3, 2.5, 1.9]
+const scores4 = ['abc', 1.3, true, 2.5, 1.9]
 
+function meanScore(...numbers){
+	if (numbers.some((num) => typeof num !== 'number')){
+		console.error(`Все аргументы в вызове функции должны быть числами!`)
+		// throw new Error(`Все аргументы в вызове функции должны быть числами!`)
+		return 
+	}
+
+	/* Как считается среднее значение в функции reduce:
+		num1 / numbers.length + num2 / numbers.length + ... + num10/ numbers.length
+		РАВНОСИЛЬНО
+		(num1 + num2 + ... + num10) / numbers.lenght
+	*/
+
+	return numbers.reduce((mean, num) => mean + num/numbers.length, 0).toFixed(2)
+}
+
+console.log(meanScore(...scores1))
+// 1.93
+
+console.log(meanScore(...scores1, ...scores2))
+// 2.8
+
+console.log(
+  meanScore(...scores1, ...scores2, ...scores3)
+)
+// 2.59
+
+console.log(meanScore(...scores4))
+// Все аргументы в вызове функции должны быть числами!
+
+
+
+
+// task 52
+/*
+- Параметры функции по умолчанию
+ *
+ * 1. Создайте функцию "weatherForecast" с двумя параметрами "city" и "weather"
+ *
+ * 2. Если второй аргумент отсутствует,
+ * параметр "weather" должен получить значение "Отличная погода!"
+ *
+ * ВАЖНО:
+ *  - Сначала решите это БЕЗ параметра функции по умолчанию
+ *  - Закомментируйте предыдущее решение
+ * и решите ту же задачу с параметром функции по умолчанию
+ *
+ * ПРИМЕЧАНИЕ:
+ * Внимательно сравните свои результаты с результатами тестовых вызовов
+ */
+
+console.log(weatherForecast('Dubai', 'Солнечно'))
+// Прогноз погоды для города Dubai: Солнечно
+
+console.log(weatherForecast('London', 'Небольшой дождь'))
+// Прогноз погоды для города London: Небольшой дождь
+
+console.log(weatherForecast('Paris'))
+// Прогноз погоды для города Paris: Отличная погода!
+
+console.log(weatherForecast('Miami', ''))
+// Прогноз погоды для города Miami:
+
+console.log(weatherForecast('Las Vegas', undefined))
+// Прогноз погоды для города Las Vegas: Отличная погода!
 
 
 
