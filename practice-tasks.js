@@ -2164,7 +2164,7 @@ console.log(meanScore(/* все элементы из массива "scores4" *
 
 // Mentors Solution
 
-const myFn = (a, ...b) => { // Воспоьзовались rest оператором и получили в "b" массив из [5, 7]
+const myFn = (a, ...b) => { // Воспользовались rest оператором и получили в "b" массив из [5, 7]
 	console.log(a)
 	console.log(b)
 }
