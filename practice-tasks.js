@@ -2275,9 +2275,6 @@ console.log(weatherForecast('Las Vegas', undefined))
 
 
 const weatherForecast = (city, weather = 'Отличная погода!') => {
-	if (weather === undefined) {
-		weather = 'Отличная погода!'
-	} 
 	console.log(`Прогноз погоды для города ${city}: ${weather}`)
 	
 }
@@ -2299,8 +2296,108 @@ console.log(weatherForecast('Las Vegas', undefined))
 
 
 
+// Mentors Solution
+
+function weatherForecast(city, weather) {
+	weather = weather !== undefined ?  weather : 'Отличная погода!'
+	return `Прогноз погоды для города ${city}: ${weather}`
+}
+
+console.log(weatherForecast('Dubai', 'Солнечно'))
+// Прогноз погоды для города Dubai: Солнечно
+
+console.log(weatherForecast('London', 'Небольшой дождь'))
+// Прогноз погоды для города London: Небольшой дождь
+
+console.log(weatherForecast('Paris'))
+// Прогноз погоды для города Paris: Отличная погода!
+
+console.log(weatherForecast('Miami', ''))
+// Прогноз погоды для города Miami:
+
+console.log(weatherForecast('Las Vegas', undefined))
+// Прогноз погоды для города Las Vegas: Отличная погода!
 
 
+// Mentors Solution 2
+
+function weatherForecast(city, weather = 'Отличная погода!') {
+	return `Прогноз погоды для города ${city}: ${weather}`
+}
+
+
+console.log(weatherForecast('Dubai', 'Солнечно'))
+// Прогноз погоды для города Dubai: Солнечно
+
+console.log(weatherForecast('London', 'Небольшой дождь'))
+// Прогноз погоды для города London: Небольшой дождь
+
+console.log(weatherForecast('Paris'))
+// Прогноз погоды для города Paris: Отличная погода!
+
+console.log(weatherForecast('Miami', ''))
+// Прогноз погоды для города Miami:
+
+console.log(weatherForecast('Las Vegas', undefined))
+// Прогноз погоды для города Las Vegas: Отличная погода!
+
+
+
+// task 53
+/*- Сокращенное написание свойств объектов
+ * 
+ * 1. Исправьте все ошибки в коде.
+ * 
+ * 2. Измените объект, возвращаемый функцией "photosGallery", используя:
+ *  - Сокращенные имена свойств
+ *  - Сокращенные имена методов
+ *  - Также нужно изменить одно свойство объекта
+ * и сделать его вычисляемым свойством
+ * 
+ * 3. Сообщения в консоли должны быть точно такими же, 
+ * как и в конце этой задачи
+ */
+
+const photosGallery = (title, dimensions, date) => {
+  return {
+    title: title,
+    info: function() {
+      console.log(
+        "Фото "${title}" имеет разрешение ${date}`
+      );
+    },
+    dimensions: dimensions
+    publishInfo: () => {
+      console.log(
+        `Фото было опубликовано ${Math.floor(
+          (new Date().getTime() - date.getTime()) / 1000
+        )} секунды назад`
+      );
+    ,
+    date: date
+  }
+}
+
+const myDogPhoto = photosGallery(
+  "My dog",
+  "1920x1080",
+  new Date()
+)
+
+const testDimension1 = "1920x1080"
+const testDimension2 = "1080x720"
+
+myDogPhoto.info()
+/* Фото "My dog" имеет разрешение 1920x1080 */
+
+setTimeout(() => myDogPhoto.publishInfo(), 2000)
+/* Фото "My dog" было опубликовано 2 секунды назад */
+
+/* ВОПРОС: Почему метод "publishInfo" все еще имеет доступ 
+к параметрам функции "photosGallery" (например "date")? */
+
+console.log(myDogPhoto[testDimension1]) // true
+console.log(myDogPhoto[testDimension2]) // undefined
 
 
 
