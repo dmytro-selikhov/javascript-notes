@@ -2470,13 +2470,70 @@ const inputQuantities2 = [8, 29]
 console.log(processQuantities(inputQuantities2)) // 21
 
 
+// My Solution 
+
+const processQuantities = ([minQty, maxQty, defaultQty = 0]) => {
+  console.log(minQty) // 8
+  console.log(maxQty) // 29
+  console.log(defaultQty) // 10 в первом вызове, 0 во втором вызове
+  return defaultQty + maxQty - minQty
+}
+
+const inputQuantities1 = [8, 29, 10]
+console.log(processQuantities(inputQuantities1)) // 31
+
+const inputQuantities2 = [8, 29]
+console.log(processQuantities(inputQuantities2)) // 21
+
+// Mentors Solution 
+
+const processQuantities = (arr) => {
+  const [minQty, maxQty, defaultQty = 0] = arr
+  console.log(minQty) // 8
+  console.log(maxQty) // 29
+  console.log(defaultQty) // 10 в первом вызове, 0 во втором вызове
+  return defaultQty + maxQty - minQty
+}
+
+const inputQuantities1 = [8, 29, 10]
+console.log(processQuantities(inputQuantities1)) // 31
+
+const inputQuantities2 = [8, 29]
+console.log(processQuantities(inputQuantities2)) // 21
+
+// Mentors Solution 2
+
+const processQuantities = ([minQty, maxQty, defaultQty = 0]) => {
+  console.log(minQty) // 8
+  console.log(maxQty) // 29
+  console.log(defaultQty) // 10 в первом вызове, 0 во втором вызове
+  return defaultQty + maxQty - minQty
+}
+
+const inputQuantities1 = [8, 29, 10]
+console.log(processQuantities(inputQuantities1)) // 31
+
+const inputQuantities2 = [8, 29]
+console.log(processQuantities(inputQuantities2)) // 21
 
 
+// task 55
+/*  - Деструктуризация результата функции
+ *
+ * 1. Создайте функцию "minMax", которая принимает любое количество аргументов
+ *
+ * 2. Эта функция должна возвращать массив из двух элементов:
+ *  - Первый элемент массива - минимальное значение среди всех аргументов.
+ *  - Второй элемент массива - это максимальное значение среди всех аргументов.
+ */
 
+let min, max
+/* Вызовите здесь функцию "minMax" с аргументами 24, 5, 34, 10 
+и используя деструктуризацию массивов присвойте значения переменным "min" и "max" */
+console.log(min, max) // 5, 34
 
-
-
-
+/* Вызовите здесь функцию "minMax" еще раз с аргументами 18, 23, 103, 70, 80, 25 */
+console.log(min, max) // 18, 103
 
 
 
