@@ -2525,7 +2525,10 @@ console.log(processQuantities(inputQuantities2)) // 21
  * 2. Эта функция должна возвращать массив из двух элементов:
  *  - Первый элемент массива - минимальное значение среди всех аргументов.
  *  - Второй элемент массива - это максимальное значение среди всех аргументов.
+ *
+ * 3. Для поиска минимального и максимального значений используйте Math.min и Math.max
  */
+
 
 let min, max
 /* Вызовите здесь функцию "minMax" с аргументами 24, 5, 34, 10 
@@ -2536,20 +2539,84 @@ console.log(min, max) // 5, 34
 console.log(min, max) // 18, 103
 
 
+// My Solution
+
+const minMax = (...arr) => {
+	min = Math.min(...arr)
+	max = Math.max(...arr) 
+
+	return 
+}
+
+minMax(24, 5, 34, 10)
+
+minMax(18, 23, 103, 70, 80, 25)
+
+
+
+const minMax = (...arr) => {
+	[min, max] = [Math.min(...arr), Math.max(...arr)]
+
+	return [min, max]
+}
+minMax(24, 5, 34, 10)
+console.log(min, max) // 18, 103
+
+minMax(18, 23, 103, 70, 80, 25)
+console.log(min, max) // 18, 103
+
+
+
+// Mentors Solution
+let min, max;
+
+function minMax(...nums) {
+	return [Math.min(...nums), Math.max(...nums)]
+}
+
+[min, max] = minMax(24, 5, 34, 10)
+console.log(min, max); // 18, 103
+
+[min, max] = minMax(18, 23, 103, 70, 80, 25)
+console.log(min, max) // 18, 103
 
 
 
 
+// task 56
+/*- Деструктуризация объектов
+ *
+ * 1. Измените функцию "personInfo" так, чтобы получить в консоли такой же вывод
+ *
+ * 2. Объект, возвращаемый функцией "personInfo", должен содержать только сокращенные имена свойств
+ */
 
+const personInfo = (/* parameters */) => {
+  /* return ... */
+}
 
+const person = {
+  name: 'Alice',
+  age: 19,
+  location: {
+    country: 'England',
+    city: 'London',
+  },
+}
 
+const result = personInfo(person)
 
-
-
-
-
-
-
+console.log(result)
+/*
+{
+  name: "Alice",
+  personAge: 19,
+  origin: "England",
+  homeCity: "London",
+  friendsQty: 0,
+  createdAtYear: *current year*
+}
+*/
 
 
 
