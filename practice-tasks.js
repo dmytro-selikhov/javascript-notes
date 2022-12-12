@@ -2405,12 +2405,13 @@ console.log(myDogPhoto[testDimension2]) // undefined
 const photosGallery = (title, dimensions, date) => {
   return {
     title,
+    date,
+    [dimensions]: true,
     info() {
       console.log(
         `Фото "${title}" имеет разрешение ${dimensions}`
       );
-    },
-    [dimensions]: true, 
+    }, 
     publishInfo() {
       console.log(
         `Фото "${title}" было опубликовано ${Math.floor(
@@ -2418,7 +2419,6 @@ const photosGallery = (title, dimensions, date) => {
         )} секунды назад`
       );
     },
-    date
  }
 }
 
@@ -2443,7 +2443,31 @@ setTimeout(() => myDogPhoto.publishInfo(), 2000)
 console.log(myDogPhoto[testDimension1]) // true
 console.log(myDogPhoto[testDimension2]) // undefined
 
+// console.log(Object.keys(myDogPhoto))
 
+
+// task 54
+/*
+ * Деструктуризация массива
+ *
+ * Измените раздел параметров в функции "processQuantities" так,
+ * чтобы совпали выводы в консоли
+ *
+ * Используйте деструктуризацию массива
+ */
+
+const processQuantities = (/* parameters */) => {
+  console.log(minQty) // 8
+  console.log(maxQty) // 29
+  console.log(defaultQty) // 10 в первом вызове, 0 во втором вызове
+  return defaultQty + maxQty - minQty
+}
+
+const inputQuantities1 = [8, 29, 10]
+console.log(processQuantities(inputQuantities1)) // 31
+
+const inputQuantities2 = [8, 29]
+console.log(processQuantities(inputQuantities2)) // 21
 
 
 

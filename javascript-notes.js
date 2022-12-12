@@ -2072,7 +2072,7 @@ class Comment {
 	}
 
 	static mergeComments(first, second) {
-		return `${first} ${second}`;
+		return `${first} ${second}`
 	}
 }
 
@@ -2541,7 +2541,7 @@ console.log(fruits);
 
 
 
-
+// Variable scope, closure - замыкания 
 
 
 
