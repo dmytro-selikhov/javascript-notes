@@ -2755,12 +2755,145 @@ console.log(testPosts)
 // оригинальный массив должен остаться без изменений
 
 
+//Mentors Solution 1
+
+const processPosts = (posts) => {
+	return posts.map((post) => {
+		return { 
+			postId: post.postId + 1000, 
+			postAuthor: post.author, 
+			postCommentsQty: post.commentsQty  === undefined ? 0 : post.commentsQty 
+		}
+	})
+
+}
+
+const testPosts = [
+  {
+    postId: 234,
+    author: 'robd',
+    commentsQty: 5,
+  },
+  {
+    postId: 823,
+    author: 'sady',
+  },
+  {
+    postId: 161,
+    author: 'merryl',
+    commentsQty: 8,
+  },
+]
+
+const processedPosts = processPosts(testPosts)
+console.log(processedPosts)
+/*
+[
+  {
+    postId: 1234,
+    postAuthor: 'robd',
+    postCommentsQty: 5
+  },
+  {
+    postId: 1823,
+    postAuthor: 'sady',
+    postCommentsQty: 0
+  },
+  {
+    postId: 1161,
+    postAuthor: 'merryl',
+    postCommentsQty: 8
+  }
+]
+*/
 
 
+//Mentors Solution 2
 
 
+//Mentors Solution 1
+
+const processPosts = (posts) => {
+	return posts.map((post) => {
+		const {postId, author: postAuthor, commentsQty: postCommentsQty = 0} = post
+		return {  
+			postAuthor, 
+			postCommentsQty,
+			postId: postId + 1000,
+		}
+	})
+
+}
+
+const testPosts = [
+  {
+    postId: 234,
+    author: 'robd',
+    commentsQty: 5,
+  },
+  {
+    postId: 823,
+    author: 'sady',
+  },
+  {
+    postId: 161,
+    author: 'merryl',
+    commentsQty: 8,
+  },
+]
+
+const processedPosts = processPosts(testPosts)
+console.log(processedPosts)
+/*
+[
+  {
+    postId: 1234,
+    postAuthor: 'robd',
+    postCommentsQty: 5
+  },
+  {
+    postId: 1823,
+    postAuthor: 'sady',
+    postCommentsQty: 0
+  },
+  {
+    postId: 1161,
+    postAuthor: 'merryl',
+    postCommentsQty: 8
+  }
+]
+*/
 
 
+// task 58
+/* - Удаление свойств объекта
+ *
+ * 1. Используйте деструктуризацию объекта вместе с rest опертором,
+ * чтобы быстро удалить определенные свойства из объекта.
+ *
+ * 2. Убедитесь, что переменные, которые будут использоваться для деструктуризации удаленных свойств,
+ * не будут доступны после операции деструктуризации.
+ */
+
+let person = {
+  _id: '5ad8cefcc0971792dacb3f1f',
+  index: 4,
+  processed: false,
+  cart: ['item1', 'item2', 'item3'],
+  email: 'slarsen@test.com',
+  name: 'Samanta Larsen',
+  cartId: 435,
+}
+
+console.log(person)
+/*
+{
+  index: 4,
+  email: "slarsen@test.com",
+  name: "Samanta Larsen",
+  cartId: 435
+}
+*/
 
 
 
