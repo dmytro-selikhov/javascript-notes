@@ -3008,30 +3008,62 @@ myExtendedArray3.forEach((el) => console.log(el))
  * Попробуйте это.
  */
 
+// My Solution
+
+// class CustomArray extends Array {
+
+// 	customPush(newElement) {
+// 		this.length += 1
+// 		 this[length] = newElement
+// 		 console.log(`New element ${newElement} was added to array`)
+// 		return this
+
+// }
+
+
 // Mentors Solution
 
-class ExtendedArray extends Array {
+class CustomArray extends Array {
+
 	customPush(newElement) {
-		this.length += 1 
-		return this.push((sum, num) => sum + num, 0)
+		console.log(this.length)
+		this[this.length] = newElement
+		console.log(this.length)
+		console.log(`New element ${newElement} was added to array`)
 	}
 
-	onlyNumbers(){
-		return this.filter((el) => typeof el === 'number')
-	}
 }
 
 
+const myCustomArray = new CustomArray(10, 3, 7, 5);
+myCustomArray.customPush(25)
+
+console.log(myCustomArray)
+
+myCustomArray.push(14)
+
+console.log(myCustomArray)
 
 
+// task 61
+/* Сумма чисел
+ *
+ * 1. Создайте функцию "sumNumbers", которая будет суммировать все переданные ей аргументы.
+ * Количество аргументов неизвестно
+ *
+ * 2. Используйте console.log внутри функции для вывода результата
+ *
+ * 3. Также верните эту сумму как результат функции
+ */
 
+sumNumbers(1, 3)
+// 4
 
+sumNumbers(10, 20, 5)
+// 35
 
-
-
-
-
-
+sumNumbers(2, 5, 80, 1, 10, 12)
+// 110
 
 
 
