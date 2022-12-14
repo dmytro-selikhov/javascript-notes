@@ -2895,7 +2895,86 @@ console.log(person)
 }
 */
 
-// Solution
+// Mentors Solution
+
+let person = {
+  _id: '5ad8cefcc0971792dacb3f1f',
+  index: 4,
+  processed: false,
+  cart: ['item1', 'item2', 'item3'],
+  email: 'slarsen@test.com',
+  name: 'Samanta Larsen',
+  cartId: 435,
+}
+
+{
+  let _id, processed, cart;
+ ({_id, processed, cart, ...person} = person)
+ console.log(_id, processed, cart)
+}
+console.log(person)
+
+
+// OPTION: Delete operator
+// delete person._id
+// delete person.processed
+// delete person.cart
+
+// ReferenceError: _id is not defined (Because _id, processed and cart are block-scoped variables)
+// console.log(_id, processed, cart)
+console.log(person)
+/*
+{
+  index: 4,
+  email: "slarsen@test.com",
+  name: "Samanta Larsen",
+  cartId: 435
+}
+*/
+
+
+// task 59
+/* - Расширение массивов
+ *
+ * 1. Создайте новый класс "ExtendedArray", который должен расширять встроенный "Array"
+ *
+ * 2. Добавьте в новый класс два пользовательских метода:
+ *  - "sum" - он должен возвращать сумму всех элементов массива
+ *  - "onlyNumbers" - должен возвращать новый массив,
+ * который будет содержать только числа из исходного массива
+ *
+ * 3. Создайте несколько экземпляров нового класса "ExtendedArray"
+ * и протестируйте оба метода "sum" и "onlyNumbers".
+ *
+ * 4. Убедитесь, что остальные методы массивов такие,
+ * как "forEach", "map" также доступны
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

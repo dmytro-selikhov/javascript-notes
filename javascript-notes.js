@@ -2072,7 +2072,7 @@ class Comment {
 	}
 
 	static mergeComments(first, second) {
-		return `${first} ${second}`
+		//return `${first} ${second}` // Раскоментировать строчку
 	}
 }
 
@@ -2081,6 +2081,7 @@ Comment.mergeComments('First comment.', 'Second Comment.');
 
 
 **РАСШИРЕНИЕ ДРУГИХ КЛАССОВ**
+
 class NumbersArray extends Array { // Родительский конструктор вызовется автоматически
 	sum() {
 		return this.reduce((el, acc) => acc += el, 0)
