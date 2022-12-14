@@ -2951,6 +2951,89 @@ console.log(person)
  */
 
 
+// Mentors Solution
+
+class ExtendedArray extends Array {
+	sum() {
+		return this.reduce((sum, num) => sum + num, 0)
+	}
+
+	onlyNumbers(){
+		return this.filter((el) => typeof el === 'number')
+	}
+}
+
+// Создаем экземпляр класса ExtendedArray
+
+const myExtendedArray = new ExtendedArray(10, 4, 5)
+
+console.log(myExtendedArray)
+
+
+const myExtendedArray2 = new ExtendedArray(10, 4, 5, 'big', true, 'tig')
+
+const myExtendedArray3 = new ExtendedArray(10, 4, 5, 'big', true, 'tig', 7, 10)
+
+myExtendedArray3.forEach((el) => console.log(el))
+
+
+
+
+// Array instances don't have access to methods sum and onlyNumbers
+// const myArray = [1, 2, 3]
+// myArray.sum()
+
+
+
+// task 60
+/*- Модифицированный метод push для массивов
+ *
+ * 1. Создайте новый класс "CustomArray", который должен расширять встроенный "Array"
+ *
+ * 2. Добавьте один пользовательский метод "customPush" в новый класс.
+ * Этот метод будет иметь один параметр "newElement".
+ *
+ * При вызове этого метода необходимо выполнить следующие действия:
+ *  - Добавить новый элемент в существующий массив
+ *  (не используйте для этого метод "push")
+ *  - Изменить свойство "length" массива (увеличить его на 1)
+ *  - Вывести в консоль следующую строку:
+ * "Новый элемент <newElement> был только что добавлен в массив"
+ *
+ * 3. Создайте экземпляр нового класса "CustomArray"
+ * и протестируйте новый метод "customPush" и сравните его с "push"
+ *
+ * 4. Что произойдет, если имя пользовательского метода
+ * в классе "CustomArray" также будет "push" вместо "customPush"?
+ * Попробуйте это.
+ */
+
+// Mentors Solution
+
+class ExtendedArray extends Array {
+	customPush(newElement) {
+		this.length += 1 
+		return this.push((sum, num) => sum + num, 0)
+	}
+
+	onlyNumbers(){
+		return this.filter((el) => typeof el === 'number')
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
