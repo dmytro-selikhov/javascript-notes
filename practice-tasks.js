@@ -3729,12 +3729,35 @@ console.log(b)
 
 
 
+b.push('newElement')
+
+console.log(a)
+// [1, 2, 3]
+
+console.log(b)
+// [1, 2, 3, "newElement"]
+
+
+
+
+
 // Mentors Solution
 
 const a = [1, 2, 3]
 
 // Напишите код здесь
-const b = [...a]
+// Option 1
+const b = [...a]// Сохраняют внутренние ссылки на объекты
+
+// Option 2
+const b = Array.from(a)// Сохраняют внутренние ссылки на объекты
+
+// Option 3
+const b = JSON.parse(JSON.stringify(a)) // Происходит глубокая копия объекта
+// Сначала конвертация в JSON строку
+// Потом конвертация в JS объект
+
+
 
 b.push('newElement')
 
@@ -3743,6 +3766,236 @@ console.log(a)
 
 console.log(b)
 // [1, 2, 3, "newElement"]
+
+
+
+// task 73 
+/*- Шаблонные строки
+ *
+ * Создайте функцию "carInfo", которая возвращает информацию о машине:
+ *  - Автомобиль считается дешевым, если его цена <= 20000
+ *  - Автомобиль считается дорогим, если его цена > 20000
+ *
+ * Выводы в консоли должны совпадать с теми, которые в конце задачи
+ */
+
+const cars = [
+  { brand: 'Honda', price: 13000 },
+  { brand: 'Rolls-Royce', price: 120000 },
+]
+
+// Создайте функцию "carInfo" здесь
+
+cars.forEach((car) => console.log(carInfo(car)))
+// Цена автомобиля Honda - 13000$ и это дешёвая машина
+// Цена автомобиля Rolls-Royce - 120000$ и это дорогая машина
+
+// Solution
+
+const cars = [
+  { brand: 'Honda', price: 13000 },
+  { brand: 'Rolls-Royce', price: 120000 },
+]
+
+// Создайте функцию "carInfo" здесь
+
+const carInfo = (car) => car.price <= 20000 ? `Цена автомобиля ${car.brand} - ${car.price} и это дешёвая машина` : `Цена автомобиля ${car.brand} - ${car.price} и это дорогая машина`
+
+
+cars.forEach((car) => console.log(carInfo(car)))
+// Цена автомобиля Honda - 13000$ и это дешёвая машина
+// Цена автомобиля Rolls-Royce - 120000$ и это дорогая машина
+
+
+// Mentors Solution
+
+const cars = [
+  { brand: 'Honda', price: 13000 },
+  { brand: 'Rolls-Royce', price: 120000 },
+]
+
+// Создайте функцию "carInfo" здесь
+function carInfo({brand, price}) {
+
+
+	return `Цена автомобиля ${brand} - ${price} и это ${price <= 20000 ? 'дешёвая' : 'дорогая' } машина`
+}
+
+
+cars.forEach((car) => console.log(carInfo(car)))
+// Цена автомобиля Honda - 13000$ и это дешёвая машина
+// Цена автомобиля Rolls-Royce - 120000$ и это дорогая машина
+
+
+
+// task 74
+/*- Деструктуризация объектов
+ *
+ * Создайте функцию "shortPerson", которая деструктуризирует объект
+ * и возвращает его короткую версию
+ *
+ * Пример результата:
+ * { n: "Mike", c: "Spain", a: 23, p: 100 }
+ *
+ * Если входной объект не имеет поля postsQuantity,
+ * он должен получить значение по умолчанию 0
+ */
+
+const person1 = {
+  name: 'Mike',
+  info: {
+    country: 'Spain',
+    age: 23,
+  },
+  postsQuantity: 100,
+}
+
+const person2 = {
+  name: 'Alice',
+  info: {
+    country: 'Italy',
+    age: 25,
+  },
+}
+
+// Напишите функцию "shortPerson" здесь
+
+console.log(shortPerson(person1))
+// { n: "Mike", c: "Spain", a: 23, p: 100 }
+
+console.log(shortPerson(person2))
+// { n: "Alice", c: "Italy", a: 25, p: 0 }
+
+
+// Solution
+
+
+const person1 = {
+  name: 'Mike',
+  info: {
+    country: 'Spain',
+    age: 23,
+  },
+  postsQuantity: 100,
+}
+
+const person2 = {
+  name: 'Alice',
+  info: {
+    country: 'Italy',
+    age: 25,
+  },
+}
+
+// Напишите функцию "shortPerson" здесь
+
+const shortPerson = (person) => {
+
+}
+
+console.log(shortPerson(person1))
+// { n: "Mike", c: "Spain", a: 23, p: 100 }
+
+console.log(shortPerson(person2))
+// { n: "Alice", c: "Italy", a: 25, p: 0 }
+
+
+
+
+
+
+
+// task 56
+/*- Деструктуризация объектов
+ *
+ * 1. Измените функцию "personInfo" так, чтобы получить в консоли такой же вывод
+ *
+ * 2. Объект, возвращаемый функцией "personInfo", должен содержать только сокращенные имена свойств
+ */
+
+
+const personInfo = (/* parameters */) => {
+  /* return ... */
+}
+
+const person = {
+  name: 'Alice',
+  age: 19,
+  location: {
+    country: 'England',
+    city: 'London',
+  },
+}
+
+const result = personInfo(person)
+
+console.log(result)
+/*
+{
+  name: "Alice",
+  personAge: 19,
+  origin: "England",
+  homeCity: "London",
+  friendsQty: 0,
+  createdAtYear: *current year*
+}
+*/
+
+// Mentors Solution
+
+
+const personInfo = ({name, age: personAge, location: {country: origin, city: homeCity}, friendsQty = 0, createdAtYear = new Date().getFullYear()}) => {
+	
+  return {
+  	name,
+  	personAge,
+  	origin,
+  	homeCity,
+  	friendsQty,
+  	createdAtYear
+  }
+}
+
+const person = {
+  name: 'Alice',
+  age: 19,
+  location: {
+    country: 'England',
+    city: 'London',
+  },
+}
+
+const result = personInfo(person)
+
+console.log(result)
+/*
+{
+  name: "Alice",
+  personAge: 19,
+  origin: "England",
+  homeCity: "London",
+  friendsQty: 0,
+  createdAtYear: *current year*
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
