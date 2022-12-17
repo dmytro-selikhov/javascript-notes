@@ -3188,13 +3188,100 @@ secondFunction(10, 10)
 firstFunction(6, 8)
 
 
+// task 63
+/*- Зона видимости функции
+ *
+ * Что будет выведено в консоль?
+ * Ответьте на вопрос без запуска кода
+ */
+
+const b = 2
+let d = 15
+
+function myFn1(a) {
+  let b 
+  let d = 10
+  myFn2(b)
+}
+
+function myFn2(a) {
+  let c = 5
+  console.log(a, b, c, d)
+}
+
+myFn1()
+
+// Solution
+console.log(a, b, c, d)//undefine, undefine, 5, undefine
 
 
 
 
+// Mentors Solution
+
+const b = 2
+let d = 15
+
+function myFn1(a) {
+  let b 
+  let d = 10
+  myFn2(b)
+}
+
+function myFn2(a) {
+  let c = 5
+  console.log(a, b, c, d)
+  // a - undefined, b - 2, c - 5, 
+}
+
+myFn1()
 
 
+// Mentors Solution
 
+const b = 2
+let d = 15
+
+function myFn1(a) {
+
+  function myFn2(a) {
+    let c = 5
+    console.log(a, b, c, d)
+    // a - undefined, b - undefined, c - 5, d - 10
+  }
+
+  let b 
+  let d = 10
+  myFn2(b)
+}
+
+
+myFn1()
+
+
+// task 64
+/*- Hoisting
+ *
+ * Измените код, чтобы исправить ошибку после строки 13.
+ *
+ * Ошибка после строки 21 все равно должна генерироваться.
+ * Почему ошибка после строки 21 возникает?
+ */
+
+const a = 5
+const b = 10
+
+if (b > a) {
+  c = a + b + c
+  // ДО: ReferenceError: Cannot access 'c' before initialization
+  // ПОСЛЕ: Нет ошибки
+  let c = 2
+  console.log(c)
+  // 17
+}
+
+console.log(c)
+// Uncaught ReferenceError: c is not defined
 
 
 
