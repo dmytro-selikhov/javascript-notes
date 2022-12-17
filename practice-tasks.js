@@ -3329,10 +3329,24 @@ console.log(isNumber(true))
 
 // Solution
 
+const isNumber = (a) => typeof a === 'number' ? `${a} - это число` : `${a} - это не число`
+
+console.log(isNumber(10))
+// 10 - это число
+
+console.log(isNumber('Привет'))
+// Привет - это не число
+
+console.log(isNumber(true))
+// true - это не число
+
+
+
+// Mentors Solution
+
+
 function isNumber(a) {
-
   return typeof a === 'number' ? `${a} - это число` : `${a} - это не число`
-
 }
 
 console.log(isNumber(10))
@@ -3343,6 +3357,292 @@ console.log(isNumber('Привет'))
 
 console.log(isNumber(true))
 // true - это не число
+
+
+// task 66
+/* - Стрелочные функции
+ *
+ * Замените обычные функции на стрелочные
+ */
+
+function mult(a, b) {
+  return a * b
+}
+
+setTimeout(function () {
+  console.log(mult(5, 10))
+}, 1000)
+// 50
+
+
+// Solution
+const mult =(a, b) => a * b
+
+setTimeout(() => console.log(mult(5, 10)), 1000)
+
+
+// Mentors Solution
+
+const mult = (a, b) => a * b
+
+
+setTimeout(() => {
+  console.log(mult(5, 10))
+}, 1000)
+// 50
+
+
+
+// task 67
+/*  - Параметры функции по умолчанию
+ *
+ * 1. Ответьте на следующий вопрос:
+ *  - Почему в строке 12 мы не можем просто использовать оператор ИЛИ?
+ *    mult = mult || 2
+ *
+ * 2. Перепишите функцию с использованием значения по умолчанию
+ * для параметра mult в "multiplyBy"
+ */
+
+function multiplyBy(a, mult) {
+  mult = mult !== undefined ? mult : 2
+  console.log(a * mult)
+}
+
+multiplyBy(2)
+// 4
+
+multiplyBy(2, undefined)
+// 4
+
+multiplyBy(2, 0)
+// 0
+
+multiplyBy(5, 10)
+// 50
+
+
+
+// Solution
+
+function multiplyBy(a, mult = 2) {
+  mult = mult !== undefined ? mult : 2
+  console.log(a * mult)
+}
+
+multiplyBy(2)
+// 4
+
+multiplyBy(2, undefined)
+// 4
+
+multiplyBy(2, 0)
+// 0
+
+multiplyBy(5, 10)
+// 50
+
+
+// Mentors Solution
+
+function multiplyBy(a, mult = 2) {
+  mult = mult !== undefined ? mult : 2
+  console.log(a * mult)
+}
+
+multiplyBy(2)
+// 4
+
+multiplyBy(2, undefined)
+// 4
+
+multiplyBy(2, 0)
+// 0
+
+multiplyBy(5, 10)
+// 50
+
+
+
+// task 68
+/* - Проверка наличия аргументов в вызове функции
+ *
+ * Измените функцию "square" так, чтобы в случае ее вызова
+ * без аргумента генерировалась ошибка
+ * "Функция "square" не может быть вызвана без аргумента"
+ */
+
+function square(a) {
+  console.log(a * a)
+}
+
+square(10)
+// 100
+
+square()
+// ДО: NaN
+// ПОСЛЕ: Uncaught Error: Функция "square" не может быть вызвана без аргумента
+
+// Mentors Solution
+function square(a) {
+  //Option 1
+  if (a === undefined) {
+    throw new Error('Uncaught Error: Функция "square" не может быть вызвана без аргумента')
+  }
+  console.log(a * a)
+}
+
+square(10)
+// 100
+
+square()
+// ДО: NaN
+// ПОСЛЕ: Uncaught Error: Функция "square" не может быть вызвана без аргумента
+
+function square(a) {
+  //Option 2
+  if (arguments.length === 0) {
+    throw new Error('Uncaught Error: Функция "square" не может быть вызвана без аргумента')
+  }
+  console.log(a * a)
+}
+
+square(10)
+// 100
+
+square()
+// ДО: NaN
+// ПОСЛЕ: Uncaught Error: Функция "square" не может быть вызвана без аргумента
+
+
+// task 69
+/*- Деструктуризация объектов
+ *
+ * Создайте функцию "mult", в которой будут умножаться
+ * значения свойств x, y, z переданного объекта
+ *
+ * Результат умножения верните из функции
+ */
+
+const objectWithNumbers = {
+  x: 5,
+  y: 20,
+  z: 3,
+}
+
+// Создайте функцию здесь
+
+const result = mult(objectWithNumbers)
+console.log(result)
+// 300
+
+// Solution
+
+const mult = (obj) => {
+  let result = 0
+ const {x: x, y: y, z: z} = obj
+
+ return result = x * y * z; 
+}
+
+const objectWithNumbers = {
+  x: 5,
+  y: 20,
+  z: 3,
+}
+
+// Создайте функцию здесь
+
+const result = mult(objectWithNumbers)
+console.log(result)
+// 300
+
+
+
+
+// Mentors Solution
+
+// Option 1
+const objectWithNumbers = {
+  x: 5,
+  y: 20,
+  z: 3,
+}
+
+// Создайте функцию здесь
+const mult = (nums) => {
+ 
+ const {x, y, z} = nums
+
+ return x * y * z; 
+}
+
+
+const result = mult(objectWithNumbers)
+console.log(result)
+// 300
+
+// Option 2
+const objectWithNumbers = {
+  x: 5,
+  y: 20,
+  z: 3,
+}
+
+// Создайте функцию здесь
+const mult = ({x, y, z} ) => x * y * z
+
+const result = mult(objectWithNumbers)
+console.log(result)
+// 300
+
+
+
+// task 70
+/*- Деструктуризация массивов и "rest" оператор
+ *
+ * Присвойте переменным "a", "b" и "с" значения, используя
+ * деструктуризацию массивов и "rest" оператор
+ *
+ * Значения переменных должны быть такими как в выводах в консоли
+ */
+
+const arr = [1, 2, 3, 4, 5, 6, 7]
+
+// Напишите код здесь
+
+const [a, b, ...c] = arr
+
+console.log(a)
+// 1
+
+console.log(b)
+// 2
+
+console.log(c)
+// [3, 4, 5, 6, 7]
+
+
+// Mentors Solution
+
+const arr = [1, 2, 3, 4, 5, 6, 7]
+
+// Напишите код здесь
+
+const [a, b, ...c] = arr
+
+console.log(a)
+// 1
+
+console.log(b)
+// 2
+
+console.log(c)
+// [3, 4, 5, 6, 7]
+
+
+
+
 
 
 
