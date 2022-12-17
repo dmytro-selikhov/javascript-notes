@@ -3665,7 +3665,7 @@ const b = [4, 5]
 const c = [8, 9, 10]
 const d = 11
 
-const combinedArray = [0, ...a, 3, ...b, 6, 7, ...c, 11]
+const combinedArray = [0, ...a, 3, ...b, 6, 7, ...c, d]
 // Напишите код здесь
 
 console.log(combinedArray)
@@ -3679,13 +3679,70 @@ const b = [4, 5]
 const c = [8, 9, 10]
 const d = 11
 
-const combinedArray = [0, ...a, 3, ...b, 6, 7, ...c, 11]
+const combinedArray = [0, ...a, 3, ...b, 6, 7, ...c, d]
 // Напишите код здесь
 
 console.log(combinedArray)
 // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
+// Original arrays were not changed
+console.log(a)
+console.log(b)
+console.log(c)
 
+
+
+// task 72
+/*- Копия массива
+ *
+ * Создайте копию массива.
+ * При изменении копии массива оригинальный массив не должен изменяться
+ */
+
+const a = [1, 2, 3]
+
+// Напишите код здесь
+
+b.push('newElement')
+
+console.log(a)
+// [1, 2, 3]
+
+console.log(b)
+// [1, 2, 3, "newElement"]
+
+
+
+// Solution
+const a = [1, 2, 3]
+
+// Напишите код здесь
+const b = [...a]
+
+b.push('newElement')
+
+console.log(a)
+// [1, 2, 3]
+
+console.log(b)
+// [1, 2, 3, "newElement"]
+
+
+
+// Mentors Solution
+
+const a = [1, 2, 3]
+
+// Напишите код здесь
+const b = [...a]
+
+b.push('newElement')
+
+console.log(a)
+// [1, 2, 3]
+
+console.log(b)
+// [1, 2, 3, "newElement"]
 
 
 
