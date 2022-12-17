@@ -3153,6 +3153,40 @@ firstFunction(6, 8)
 
 
 
+// Mentors Solution
+
+
+
+// Function Declaration - может вызываться раньше объявления функции. В любом месте.
+// Function can be called before declaretion
+// console.log(firstFunction(6, 8))
+
+
+// Cannot access 'secondFunction' before initialization
+// secondFunction(20, 20)  // secondFunction is not defined
+
+function firstFunction(a, b) {
+  return a + b
+}
+
+// We can assign new value - Мы можем присвоить другое значение переменной
+// firstFunction = '123'
+// console.log(firstFunction)
+
+
+
+// Function Expression - должна быть объявлена, а уже после вызываться. 
+const secondFunction = function (a, b) {
+  return a + b
+};
+
+// We can't assign new value - Мы не можем присвоить другое значение переменной
+// secondFunction = true;
+
+secondFunction(10, 10)
+
+firstFunction(6, 8)
+
 
 
 
