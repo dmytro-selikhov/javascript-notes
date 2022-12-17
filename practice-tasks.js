@@ -3065,18 +3065,78 @@ sumNumbers(10, 20, 5)
 sumNumbers(2, 5, 80, 1, 10, 12)
 // 110
 
-// Some comments
-// More comments
+// Solution 
+
+let result;
+debugger
+
+// function sumNumbers (...args) {
+
+const sumNumbers = (...args) => {
+
+		const newArr = [...args];
+		result = newArr.reduce((sum, el) =>{
+			return sum +=sum + el
+		}, 0)
+
+	console.log(result);
+
+	return result;
+}
+
+sumNumbers(1, 3)
+// 4
+
+sumNumbers(10, 20, 5)
+// 35
+
+sumNumbers(2, 5, 80, 1, 10, 12)
+// 110
+
+
+// Mentors Solution
+
+function sumNumbers() {
+	let sum = 0
+	for (let i = 0; i < arguments.length; i++) {
+		sum += arguments[i]
+	}
+	console.log('Sum of all arguments is ', sum)
+
+	return sum
+}
+
+sumNumbers(1, 3)
+// 4
+
+sumNumbers(10, 20, 5)
+// 35
+
+sumNumbers(2, 5, 80, 1, 10, 12)
+// 110
 
 
 
 
 
+// task 62
 
+/*- Разница в объявлении функций
+ *
+ * 1. Объясните разницу между двумя вариантами объявления функций
+ *
+ * 2. Покажите эту разницу, добавив дополнительный код под функциями
+ *
+ * 3. Также вызовите обе функции
+ */
 
+function firstFunction(a, b) {
+  return a + b
+}
 
-
-
+const secondFunction = function (a, b) {
+  return a + b
+}
 
 
 
