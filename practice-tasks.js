@@ -3130,16 +3130,25 @@ sumNumbers(2, 5, 80, 1, 10, 12)
  * 3. Также вызовите обе функции
  */
 
+
+
+// Function Declaration - может вызываться раньше объявления функции. В любом месте.
+firstFunction(6, 8)
+// secondFunction(20, 20)  // secondFunction is not defined
+
 function firstFunction(a, b) {
   return a + b
 }
 
+
+// Function Expression - должна быть объявлена, а уже после вызываться. 
 const secondFunction = function (a, b) {
   return a + b
-}
+};
 
+secondFunction(10, 10)
 
-
+firstFunction(6, 8)
 
 
 
