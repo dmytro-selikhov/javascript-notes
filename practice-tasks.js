@@ -4251,11 +4251,162 @@ const result = sumObjectValues(objectWithNumbers)
 console.log(result)
 //42
 
+// Solution
+const objectWithNumbers = {
+  a: 10,
+  b: 20,
+  c: 'string',
+  d: 12,
+}
+
+const sumObjectValues = (obj) => {
+  let result = 0;
+debugger
+  for (const key in obj) {
+    if (typeof obj.key === 'number'){
+      result += obj.key
+    }
+  }
+  return result
+}
+// Создайте функцию здесь
+
+const result = sumObjectValues(objectWithNumbers)
+console.log(result)
+//42
+
+// Mentors Solution
+// Option 1
+const objectWithNumbers = {
+  a: 10,
+  b: 20,
+  c: 'string',
+  d: 12,
+}
+
+function sumObjectValues(nums){
+  let sum = 0;
+  Object.keys(nums).forEach((key) => {  // Конвертируем объект в массив с помощью Object.keys(nums)
+    if (typeof nums[key] === 'number'){
+      sum += nums[key]
+    }
+  })
+  
+  return sum
+}
+
+const result = sumObjectValues(objectWithNumbers)
+console.log(result)
+
+// Option 2
+const objectWithNumbers = {
+  a: 10,
+  b: 20,
+  c: 'string',
+  d: 12,
+}
+
+
+//ДОРАБОТАТЬ
+function sumObjectValues(nums){
+  let sum = 0;
+  Object.keys(nums).reduce((sum, key) => {  // Конвертируем объект в массив с помощью Object.keys(nums)
+    if (typeof nums[key] === 'number'){
+      sum += nums[key]
+    }
+  }, 0)
+  
+  return sum
+}
+// Создайте функцию здесь
+
+const result = sumObjectValues(objectWithNumbers)
+console.log(result)
+
+
+// task 80
+/* - Сумма положительных и отрицательных чисел
+ *
+ * 1. Создайте функцию "sumPositiveNegative", которая принимает массив
+ * и суммирует отдельно положительные и отрицательные числа.
+ *
+ * 2. Функция должна вернуть такой объект:
+ *  {
+ *    positive: 74, // сумма всех положительных чисел
+ *    negative: -54 // сумма всех отрицательных чисел
+ *  }
+ */
+
+const nums = [10, -12, 30, -1, -8, 0, 14, -33, 20]
+
+// Создайте функцию "sumPositiveNegative" здесь
+
+const result = sumPositiveNegative(nums)
+
+console.log(result)
+// { positive: 74, negative: -54 }
 
 
 
+// Solution
+
+const nums = [10, -12, 30, -1, -8, 0, 14, -33, 20]
+
+// Создайте функцию "sumPositiveNegative" здесь
+
+function sumPositiveNegative(arr) {
+  let positiveNums = 0
+  let negativeNums = 0
+  for (const element of arr) {
+      if (element >= 0) {
+        positiveNums += element
+      }
+      if (element < 0) {
+        negativeNums += element
+      } 
+  }
+  
+  return {
+    positiveNums,
+    negativeNums
+  }
+}
+
+const result = sumPositiveNegative(nums)
+
+console.log(result)
+// { positive: 74, negative: -54 }
 
 
+// Mentors Solution
+
+const nums = [10, -12, 30, -1, -8, 0, 14, -33, 20]
+
+// Создайте функцию "sumPositiveNegative" здесь
+
+function sumPositiveNegative(arr) {
+ 
+   return arr.reduce((sums, num) => {
+      if (num > 0){
+        return {
+          positive: sums.positive + num,
+          negative: sums.negative
+        }
+      }  
+
+      return {
+        positive: sums.positive,
+        negative: sums.negative + num
+      }
+
+   }, {positive: 0, negative: 0})
+  
+}
+
+const result = sumPositiveNegative(nums)
+
+console.log(result)
+// { positive: 74, negative: -54 }
 
 
 
