@@ -3890,8 +3890,54 @@ const person2 = {
 // Напишите функцию "shortPerson" здесь
 
 const shortPerson = (person) => {
+  const {name: n, info: {country: c, age: a}, postsQuantity: p = 0 } = person
 
+  return{
+    n,
+    c,
+    a,
+    p
+  }
 }
+
+
+
+console.log(shortPerson(person1))
+// { n: "Mike", c: "Spain", a: 23, p: 100 }
+
+console.log(shortPerson(person2))
+// { n: "Alice", c: "Italy", a: 25, p: 0 }
+
+
+// Mentors Solution
+
+
+const person1 = {
+  name: 'Mike',
+  info: {
+    country: 'Spain',
+    age: 23,
+  },
+  postsQuantity: 100,
+}
+
+const person2 = {
+  name: 'Alice',
+  info: {
+    country: 'Italy',
+    age: 25,
+  },
+}
+
+
+const shortPerson = ({name: n, info: {country: c, age: a}, postsQuantity: p = 0 }) => ({ 
+  n,
+  c,
+  a,
+  p
+})
+
+
 
 console.log(shortPerson(person1))
 // { n: "Mike", c: "Spain", a: 23, p: 100 }
@@ -3905,79 +3951,14 @@ console.log(shortPerson(person2))
 
 
 
-// task 56
-/*- Деструктуризация объектов
- *
- * 1. Измените функцию "personInfo" так, чтобы получить в консоли такой же вывод
- *
- * 2. Объект, возвращаемый функцией "personInfo", должен содержать только сокращенные имена свойств
- */
 
 
-const personInfo = (/* parameters */) => {
-  /* return ... */
-}
-
-const person = {
-  name: 'Alice',
-  age: 19,
-  location: {
-    country: 'England',
-    city: 'London',
-  },
-}
-
-const result = personInfo(person)
-
-console.log(result)
-/*
-{
-  name: "Alice",
-  personAge: 19,
-  origin: "England",
-  homeCity: "London",
-  friendsQty: 0,
-  createdAtYear: *current year*
-}
-*/
-
-// Mentors Solution
 
 
-const personInfo = ({name, age: personAge, location: {country: origin, city: homeCity}, friendsQty = 0, createdAtYear = new Date().getFullYear()}) => {
-	
-  return {
-  	name,
-  	personAge,
-  	origin,
-  	homeCity,
-  	friendsQty,
-  	createdAtYear
-  }
-}
 
-const person = {
-  name: 'Alice',
-  age: 19,
-  location: {
-    country: 'England',
-    city: 'London',
-  },
-}
 
-const result = personInfo(person)
 
-console.log(result)
-/*
-{
-  name: "Alice",
-  personAge: 19,
-  origin: "England",
-  homeCity: "London",
-  friendsQty: 0,
-  createdAtYear: *current year*
-}
-*/
+
 
 
 
