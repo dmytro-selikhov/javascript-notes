@@ -4389,13 +4389,13 @@ function sumPositiveNegative(arr) {
    return arr.reduce((sums, num) => {
       if (num > 0){
         return {
+          ...sums, // Разделяем объект на свойства до изменения своцства
           positive: sums.positive + num,
-          negative: sums.negative
         }
       }  
 
       return {
-        positive: sums.positive,
+        ...sums, // Разделяем объект на свойства до изменения своцства
         negative: sums.negative + num
       }
 
