@@ -3947,12 +3947,80 @@ console.log(shortPerson(person2))
 
 
 
+// task 75
+/* - Перебор символов строки
+ *
+ * Подсчитайте количество строчных гласных букв в строке.
+ * Гласные буквы - a, e, i, o, u
+ */
+
+let vowelsCount = 0
+const vowels = ['a', 'e', 'i', 'o', 'u']
+
+const str = 'Today is the best day of my life'
+
+// Напишите код здесь
+
+console.log(vowelsCount)
+// 9
 
 
+// Solution
+
+let vowelsCount = 0
+
+const vowels = ['a', 'e', 'i', 'o', 'u']
+
+const str = 'Today is the best day of my life'
+
+// Напишите код здесь
+function countVowel(str) {
+
+  // loop through string to test if each character is a vowel
+  for (let letter of str.toLowerCase()) {
+      if (vowels.includes(letter)) {
+        vowelsCount++;
+      }
+  }
+
+  // return number of vowels
+  return vowelsCount
+}
+
+console.log(countVowel(str) )
 
 
+// Mentors Solution
+
+let vowelsCount = 0
+const vowels = ['a', 'e', 'i', 'o', 'u']
+
+const str = 'Today is the best day of my life'
+
+// Option 1
+str.split('').forEach((char) => {
+  if (vowels.includes(char)){
+    vowelsCount += 1
+  }
+} )
+// Напишите код здесь
+
+console.log(vowelsCount)
+// 9
+
+// Option 2
+
+for (const char of str) {
+  if (vowels.includes(char)){
+    vowelsCount += 1
+  }
+}
+
+console.log(vowelsCount)
+// 9
 
 
+// task 76
 
 
 
